@@ -1,17 +1,15 @@
 ---
 lab:
-    title: '实验室 03：预配非关系 Azure 数据服务'
-    module: '模块 03：探索 Azure 中的非关系数据'
+  title: 实验室 03：预配非关系 Azure 数据服务
+  module: 'Module 03: Explore non-relational data in Azure'
+ms.openlocfilehash: b5f4fd9fbe05bcea6cd640a59e45eab50a5f3e05
+ms.sourcegitcommit: 32d1de2c37267f8d3cedb0f0064b08be2cde5bb7
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/04/2022
+ms.locfileid: "139267705"
 ---
+## <a name="instructions"></a>说明
+在本练习中，你将探索如何将 Azure 存储用作非关系数据存储
 
-## 说明
-在示例场景中，你决定创建以下数据存储：
-
-* Cosmos DB，用于保存有关库存产品数量的信息。你需要存储有关数量级别的当前和历史信息，以便可以跟踪数量随时间变化的方式。每天记录一次数据。
-* 用于保存生产和质量数据的 Data Lake store。
-* Blob 容器，用于保存公司生产产品的图像。
-* 用于共享报告的文件存储。
-
-在此实验室中，你将预配和配置 Cosmos DB 帐户，并通过创建一个数据库、一个容器和一个示例文档来测试它。你还将预配一个 Azure 存储帐户，该帐户可以提供 Blob、文件和 Data Lake 存储。
-
-1.	转到 Microsoft Learn 练习 https://aka.ms/dp900lab03-chs 并在浏览器中完成单元： 
+1.  转到 https://docs.microsoft.com/learn/modules/explore-provision-deploy-non-relational-data-services-azure/6-exercise-azure-storage 的 Microsoft Learn 练习并在浏览器中完成该单元： 

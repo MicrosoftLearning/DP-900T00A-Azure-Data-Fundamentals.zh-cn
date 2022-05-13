@@ -1,15 +1,24 @@
-﻿# DP-900 培训师实验室映射
+---
+ms.openlocfilehash: d886b438a93762235ecd051230f873dae1b674ce
+ms.sourcegitcommit: 1117342052bce0bbd5a703bd1f763862b9129807
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "140682434"
+---
+# <a name="dp-900-trainer-lab-mapping"></a>DP-900 培训师实验室对应
 
-本课程“DP-900：Microsoft Azure 数据基础知识”有一套专门用于讲师指导培训的实验室。 
+本课程“DP-900：Microsoft Azure 数据基础知识”中有一部分专为讲师指导式培训准备的实验室。 
 
-> 注释：讲师可以选择让学生利用相关 Learn 学习路径 (https://docs.microsoft.com/users/23110622/collections/0kjyh8rn5gdrjj) 中的练习，在自己的时间完成一个或多个实验室。 
+> 注意：讲师可以选择让学生在自己的时间内完成一个或多个实验室，方法是使用关联的 Learn 学习路径中的练习 (https://docs.microsoft.com/users/23110622/collections/0kjyh8rn5gdrjj) 。 
 
-## 映射到实验室的 DP-900 模块
+## <a name="dp-900-module-mapping-to-labs"></a>DP-900 模块与实验室的对应
 
-| DP-900 培训师实验室 | 主题 | Markdown 文件 |
+| 模块 | 实验室 | Markdown 文件 |
 | --- | --- | --- |
-| 01：DP-900 模块 02 | 预配 Azure 关系数据库服务 | [01-Provision-Azure-relational-database-services.md](https://github.com/MicrosoftLearning/DP-900ZH-Microsoft-Azure-Data-Fundamentals/blob/master/Instructions/01-Provision-Azure-relational-database-services.md) |
-| 02：DP-900 模块 02 | 使用 SQL 查询 Azure SQL 数据库 | [02-Use-SQL-to-query-Azure-SQL-Database.md](https://github.com/MicrosoftLearning/DP-900ZH-Microsoft-Azure-Data-Fundamentals/blob/master/Instructions/02-Use-SQL-to-query-Azure-SQL-Database.md) |
-| 03：DP-900 模块 03 | 预配非关系 Azure 数据服务  | [03-Provision-non-relational-Azure-data-services.md](https://github.com/MicrosoftLearning/DP-900ZH-Microsoft-Azure-Data-Fundamentals/blob/master/Instructions/03-Provision-non-relational-Azure-data-services.md) |
-| 04：DP-900 模块 03 | 在非关系数据存储中上传、下载和查询数据 | [04-Upload-download-and-query-data-in-a-non-relational-data-store.md](https://github.com/MicrosoftLearning/DP-900ZH-Microsoft-Azure-Data-Fundamentals/blob/master/Instructions/04-Upload-download-and-query-data-in-a-non-relational-data-store.md) |
-
+| 02 - 了解 Azure 中的关系数据 | 探索 Azure SQL 数据库 | [dp900-01-sql-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-01-sql-lab.md) |
+| 03 - 了解 Azure 中的非关系数据 | 了解 Azure 存储 | [dp900-02-storage-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-02-storage-lab.md) |
+| 03 - 了解 Azure 中的非关系数据| 了解 Azure Cosmos DB  | [dp900-03-cosmos-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-03-cosmos-lab.md) |
+| 04 - 在 Azure 中探索数据分析 | 了解 Azure Synapse Analytics | [dp900-04-synapse-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-04-synapse-lab.md) |
+| 04 - 在 Azure 中探索数据分析 | 探索 Azure 流分析 | [dp900-05-stream-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-05-stream-lab.md) |
+| 04 - 在 Azure 中探索数据分析 | 使用 Power BI 可视化数据 | [dp900-pbi-06-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-pbi-06-lab.md) |
