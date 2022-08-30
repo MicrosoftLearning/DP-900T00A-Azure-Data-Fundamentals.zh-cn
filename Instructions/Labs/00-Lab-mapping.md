@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: d886b438a93762235ecd051230f873dae1b674ce
-ms.sourcegitcommit: 1117342052bce0bbd5a703bd1f763862b9129807
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "140682434"
----
 # <a name="dp-900-trainer-lab-mapping"></a>DP-900 培训师实验室对应
 
 本课程“DP-900：Microsoft Azure 数据基础知识”中有一部分专为讲师指导式培训准备的实验室。 
