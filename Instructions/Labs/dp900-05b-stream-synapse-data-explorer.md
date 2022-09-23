@@ -1,0 +1,150 @@
+---
+lab:
+  title: 了解 Azure Synapse 数据资源管理器
+  module: Explore fundamentals of real-time analytics
+---
+
+# <a name="explore-azure-synapse-data-explorer"></a>了解 Azure Synapse 数据资源管理器
+
+在此练习中，你将使用 Azure Synapse 数据资源管理器分析时序数据。
+
+完成本实验室大约需要 25 分钟。
+
+## <a name="before-you-start"></a>准备工作
+
+需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
+
+## <a name="provision-a-synapse-analytics-workspace"></a>预配 Synapse Analytics 工作区
+
+> 提示：如果你在之前的练习中已经有了Azure Synapse 工作区，那么跳过这一节，直接进入[创建一个数据资源管理器池](#create-a-data-explorer-pool) .
+
+1. 访问 [https://portal.azure/com](https://portal.azure.com?azure-portal=true) 以打开 Azure 门户，然后使用与你的 Azure 订阅关联的凭据登录。
+
+    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Ensure you are working in the directory containing your subscription - indicated at the top right under your user ID. If not, select the user icon and switch directory.
+
+1. 在 Azure 门户的“主页”上，使用“+ 创建资源”图标创建一个新资源。
+1. 搜索“Azure Synapse Analytics”，并创建一个新的 Azure Synapse Analytics 资源，使其包含以下设置：
+    - **订阅**：Azure 订阅
+        - 资源组：创建一个具有合适名称的新资源组，如名为“synapse-rg”
+        - 受管理资源组：输入适当的名称，例如“synapse-managed-rg”。
+    - 工作区名称：输入一个唯一的工作区名称，例如“synapse-ws-<your_name>”。
+    - 区域：选择任何可用区域。
+    - 选择 Data Lake Storage Gen 2：从订阅
+        - 帐户名：新建一个具有唯一名称的帐户，例如“datalake<your_name>”。
+        - 文件系统名称：新建一个具有唯一名称的文件系统，例如“fs<your_name>”。
+
+    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A Synapse Analytics workspace requires two resource groups in your Azure subscription; one for resources you explicitly create, and another for managed resources used by the service. It also requires a Data Lake storage account in which to store data, scripts, and other artifacts.
+
+1. 输入这些详细信息后，选择“审阅并创建”，然后选择“创建”来创建工作区。
+1. 等待工作区的创建 - 此操作可能需要约 5 分钟。
+1. 部署完成后，转到创建的资源组，并注意它包含你的 Synapse Analytics 工作区和一个 Data Lake Storage 帐户。
+1. 选择 Synapse 工作区，并在其“概述”页的“打开 Synapse Studio”卡中选择“打开”，在新浏览器选项卡中打开 Synapse Studio。Synapse Studio 是一个基于 Web 的界面，可用于处理 Synapse Analytics 工作区。
+1. 在 Synapse Studio 左侧，使用 &rsaquo;&rsaquo; 图标展开菜单，这将显示 Synapse Studio 中用于管理资源和执行数据分析任务的不同页面
+
+## <a name="create-a-data-explorer-pool"></a>创建数据资源管理器池
+
+1. 在 Synapse Studio 中，选择“管理”页。
+1. 选择“数据资源管理器池”选项卡，然后使用“&#65291; 新建”图标，新建一个具有以下设置的新池： 
+    -               数据资源管理器池名称：dxpool
+    -               工作负载：计算优化
+    -               大小：特小型（2 核）
+1. 选择“下一步: 其他设置 >”并启用“流式引入”设置，这使数据资源管理器能够从流式处理源（如 Azure 事件中心）引入新数据。 
+1. 选择“查看并创建”以创建数据资源管理器池，然后等待它部署完成（可能需要 15 分钟或更长时间 - 状态将从“正在创建”更改为“联机”）。
+
+## <a name="create-a-database-and-ingest-data"></a>创建数据库并引入数据
+
+1. 在 Synapse Studio 中，选择“数据”页。
+1. 确保选中“工作区”选项卡，并在必要时选择页面左上角的 &#8635; 图标以刷新视图，以便列出数据资源管理器数据库  。
+1. 展开“数据资源管理器数据库”并验证是否已列出 dxpool。
+1. 在“数据”窗格中，使用 &#65291; 图标在 dxpool 池中创建一个名称为 iot-data 的新数据资源管理器数据库    。
+1. 等待创建数据库时，从 [https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/raw/master/streaming/data/devices.csv](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/raw/master/streaming/data/devices.csv?azure-portal=true) 下载 devices.csv，将其保存在本地计算机上的任一文件夹中。
+1. 在 Synapse Studio 中，等待创建数据库（如有必要），然后在新的“iot-data”数据库的“...”菜单中，选择“在 Azure 数据资源管理器中打开”。
+1. 在包含 Azure 数据资源管理器的新浏览器选项卡中的“数据”选项卡上，选择“引入新数据”。
+1. 在“目标”页中，选择以下设置：
+    -               群集：Azure Synapse 工作区中的 dxpool 数据资源管理器池
+    -               数据库：iot-data
+    -               表：创建名为“设备”的新表
+1. 选择“下一步: 源”，在“源”页上，选择以下选项：
+    -               源类型：文件
+    -               文件：从本地计算机上传 devices.csv 文件。
+1. 选择“下一步: 架构”，在“架构”页上，确保以下设置正确：
+    -               压缩类型：未压缩
+    -               数据格式：CSV
+    - 忽略第一条记录：已选择
+    -               映射：devices_mapping
+1. Ensure the column data types have been correctly identified as <bpt id="p1">*</bpt>Time (datetime)<ept id="p1">*</ept>, <bpt id="p2">*</bpt>Device (string)<ept id="p2">*</ept>, and <bpt id="p3">*</bpt>Value (long)<ept id="p3">*</ept>). Then select <bpt id="p1">**</bpt>Next: Start Ingestion<ept id="p1">**</ept>.
+1. 引入完成后，选择“关闭”。
+1. 在 Azure 数据资源管理器的“查询”选项卡上，确保选中“iot-data”数据库，然后在“查询”窗格中输入以下查询。
+
+    ```kusto
+    devices
+    ```
+
+1. 在工具栏上，选择“&#9655; 运行”来运行查询，并检查结果，结果应该如下所示：
+
+    | 时间 | 设备 | 值 |
+    | --- | --- | --- |
+    | 2022-01-01T00:00:00Z | Dev1 | 7 |
+    | 2022-01-01T00:00:01Z | Dev2 | 4 |
+    | ... | ... | ... |
+
+    如果结果与此匹配，则表明你已成功从文件中的数据创建“设备”表。
+
+    > <bpt id="p1">**</bpt>Tip<ept id="p1">**</ept>: In this example, you imported a very small amount of batch data from a file, which is fine for the purposes of this exercise. In reality, you can use Data Explorer to analyze much larger volumes of data; and since you enabled stream ingestion, you could also have configured Data Explorer to ingest data into the table from a streaming source such as Azure Event Hubs.
+
+## <a name="use-kusto-query-language-to-query-the-table-in-synapse-studio"></a>使用 Kusto 查询语言查询 Synapse Studio 中的表
+
+1. 关闭 Azure 数据资源管理器浏览器选项卡并返回到包含 Synapse Studio 的选项卡。
+1. On the <bpt id="p1">**</bpt>Data<ept id="p1">**</ept> page, expand the <bpt id="p2">**</bpt>iot-data<ept id="p2">**</ept> database and its <bpt id="p3">**</bpt>Tables<ept id="p3">**</ept> folder. Then in the <bpt id="p1">**</bpt>...<ept id="p1">**</ept> menu for the <bpt id="p2">**</bpt>devices<ept id="p2">**</ept> table, select <bpt id="p3">**</bpt>New KQL Script<ept id="p3">**</ept><ph id="ph1"> &gt; </ph><bpt id="p4">**</bpt>Take 1000 rows<ept id="p4">**</ept>.
+1. Review the generated query and its results. The query should contain the following code:
+
+    ```kusto
+    devices
+    | take 1000
+    ```
+
+    查询结果包含前 1000 行数据。
+
+1. 按照以下方式更改查询：
+
+    ```kusto
+    devices
+    | where Device == 'Dev1'
+    ```
+
+1. Select <bpt id="p1">**</bpt>&amp;#9655; Run<ept id="p1">**</ept> to run the query. Then review the results, which should contain only the rows for the <bpt id="p1">*</bpt>Dev1<ept id="p1">*</ept> device.
+
+1. 按照以下方式更改查询：
+
+    ```kusto
+    devices
+    | where Device == 'Dev1'
+    | where Time > datetime(2022-01-07)
+    ```
+
+1. 运行查询并查看结果，其中应仅包含“Dev1”设备晚于 2022 年 1 月 7 日的行。
+
+1. 按照以下方式更改查询：
+
+    ```kusto
+    devices
+    | where Time between (datetime(2022-01-01 00:00:00) .. datetime(2022-07-01 23:59:59))
+    | summarize AvgVal = avg(Value) by Device
+    | sort by Device asc
+    ```
+
+1. 运行查询并查看结果，其中应包含 2022 年 1 月 1 日至 1 月 7 日之间记录的平均设备值（按设备名称的升序）。
+
+1. 关闭“KQL 查询”选项卡，放弃所做的更改。
+
+## <a name="delete-azure-resources"></a>删除 Azure 资源
+
+你已完成对 Azure Synapse Analytics 的探索，现在应删除已创建的资源，以避免产生不必要的 Azure 成本。
+
+1. 关闭 Synapse Studio 浏览器选项卡，而不保存任何更改，然后返回 Azure 门户。
+1. 在 Azure 门户的“主页”上，选择“资源组”。
+1. 选择 Synapse Analytics 工作区的资源组（不是受管理资源组），并确认它包含 Synapse 工作区、存储帐户和工作区的数据资源管理器池（如果你已完成上一练习，则还会包含 Spark 池）。
+1. 在资源组的“概述”页的顶部，选择“删除资源组”。
+1. 输入资源组名称以确认要删除该资源组，然后选择“删除”。
+
+    几分钟后，你的 Azure Synapse 工作区及其关联的受管理工作区将被删除。
