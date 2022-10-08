@@ -18,9 +18,9 @@ lab:
 
 在本练习中，你将预配 Azure Database for MySQL 资源。
 
-1. In the Azure portal, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Azure Database for MySQL<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure Database for MySQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 Azure 门户的左上角选择“&#65291; 创建资源”，然后搜索“Azure Database for MySQL”。 然后，在出现的“Azure Database for MySQL”页上选择“创建”。
 
-1. Review the Azure Database for MySQL options that are available. Then for <bpt id="p1">**</bpt>Resource type<ept id="p1">**</ept>, select <bpt id="p2">**</bpt>Flexible Server<ept id="p2">**</ept> and select <bpt id="p3">**</bpt>Create<ept id="p3">**</ept>.
+1. 查看可用的 Azure Database for MySQL 选项。 然后选择“资源类型”，选择“灵活服务器”，并选择“创建”  。
 
     ![Azure Database for MySQL 部署选项的屏幕截图](images/mysql-options.png)
 
@@ -43,7 +43,7 @@ lab:
 
 1. 依次选择“查看 + 创建”、“创建”，以创建 Azure MySQL 数据库。
 
-1. Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+1. 等待部署完成。 然后转到已部署的资源，它应该如下所示：
 
     ![Azure 门户的屏幕截图，其中显示 Azure Database for MySQL 页面。](images/mysql-portal.png)
 

@@ -9,18 +9,18 @@ lab:
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
 ## <a name="create-a-cosmos-db-account"></a>创建 Cosmos DB 帐户
 
-To use Cosmos DB, you must provision a Cosmos DB account in your Azure subscription. In this exercise, you'll provision a Cosmos DB account that uses the core (SQL) API.
+若要使用 Cosmos DB，必须在 Azure 订阅中预配 Cosmos DB 帐户。 在此练习中，你将预配一个 Cosmos DB 帐户，该帐户使用核心 (SQL) API。
 
-1. In the Azure portal, select <bpt id="p1">**</bpt>+ Create a resource<ept id="p1">**</ept> at the top left, and search for <bpt id="p2">*</bpt>Azure Cosmos DB<ept id="p2">*</ept>.  In the results, select <bpt id="p1">**</bpt>Azure Cosmos DB<ept id="p1">**</ept> and select  <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 Azure 门户中，选择左上角的“+ 创建资源”，然后搜索“Azure Cosmos DB”。  在结果中，选择 Azure Cosmos DB，然后选择“创建” 。
 1. 在“核心(SQL) - 推荐”框中，选择“创建”。
 1. 输入以下详细信息，然后选择“查看 + 创建”：
-    - <bpt id="p1">**</bpt>Subscription<ept id="p1">**</ept>: If you're using a sandbox, select <bpt id="p2">*</bpt>Concierge Subscription<ept id="p2">*</ept>. Otherwise, select your Azure subscription.
+    - **订阅**：如果正在使用沙盒，请选择“助手订阅”。 否则，请选择 Azure 订阅。
     - 资源组：如果使用沙盒，请选择现有资源组（其名称类似于 learn-xxxx...）。否则，请使用所选的名称创建一个新资源组。
     - **帐户名**：输入唯一的名称
     -               位置：选择任何建议的位置
@@ -28,7 +28,7 @@ To use Cosmos DB, you must provision a Cosmos DB account in your Azure subscript
     - **应用免费分级折扣**：如果可用，请选择“应用”
     - **限制总帐户吞吐量**：未选择
 1. 验证配置后，选择“创建”。
-1. Wait for deployment to complete. Then go to the deployed resource.
+1. 等待部署完成。 然后，转到部署的资源。
 
 ## <a name="create-a-sample-database"></a>创建示例数据库
 
@@ -41,7 +41,7 @@ To use Cosmos DB, you must provision a Cosmos DB account in your Azure subscript
 
 ## <a name="view-and-create-items"></a>查看和创建项
 
-1. In the Data Explorer page, expand the <bpt id="p1">**</bpt>SampleDB<ept id="p1">**</ept> database and the <bpt id="p2">**</bpt>SampleContainer<ept id="p2">**</ept> container, and select <bpt id="p3">**</bpt>Items<ept id="p3">**</ept> to see a list of items in the container. The items represent addresses, each with a unique id and other properties.
+1. 在“数据资源管理器”页中，展开“SampleDB”数据库和“SampleContainer”容器，然后选择“项”以查看容器中的项列表。 项表示地址，每个地址都具有唯一的 ID 和其他属性。
 1. 选择列表中的任意项，查看以 JSON 形式表示的项数据。
 1. 在页面顶部，选择“新建项目”以创建新的空白项目。
 1. 按如下所示修改新项的 JSON 形式，然后选择“保存”。
@@ -71,6 +71,6 @@ To use Cosmos DB, you must provision a Cosmos DB account in your Azure subscript
 1. 使用“执行查询”按钮运行修订后的查询并查看结果，其中包括具有包含文本“Any St.”的“地址”字段的任何项的 JSON 实体。
 1. 关闭 SQL 查询编辑器，放弃更改。
 
-    You've seen how to create and query JSON entities in a Cosmos DB database by using the data explorer interface in the Azure portal. In a real scenario, an application developer would use one of the many programming language specific software development kits (SDKs) to call the core (SQL) API and work with data in the database.
+    已了解如何使用 Azure 门户中的数据资源管理器界面在 Cosmos DB 数据库中创建和查询 JSON 实体。 在实际方案中，应用程序开发人员将使用多种特定于编程语言的软件开发工具包 (sdk) 之一来调用核心 (SQL) API，并处理数据库中的数据。
 
 > 提示：如果已完成浏览 Azure Cosmos DB，则可以删除在本练习中创建的资源组。
