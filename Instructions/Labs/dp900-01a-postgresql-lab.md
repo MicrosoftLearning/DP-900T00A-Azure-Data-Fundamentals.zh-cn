@@ -18,7 +18,7 @@ lab:
 
 在本练习中，你将预配 Azure Database for PostgreSQL 资源。
 
-1. In the Azure portal, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Azure Database for PostgreSQL<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure Database for PostgreSQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 Azure 门户的左上角选择“&#65291; 创建资源”，然后搜索“Azure Database for PostgreSQL”。 然后，在出现的“Azure Database for PostgreSQL”页上选择“创建”。
 
 1. 查看可用的 Azure Database for PostgreSQL 选项，然后在“灵活服务器”磁贴中选择“创建” 。
 
@@ -43,7 +43,7 @@ lab:
 
 1. 依次选择“查看 + 创建”和“创建”，创建 Azure PostgreSQL 数据库。
 
-1. Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+1. 等待部署完成。 然后转到已部署的资源，它应该如下所示：
 
     ![Azure 门户的屏幕截图，其中显示了 Azure Database for PostgreSQL 页面。](images/postgresql-portal.png)
 

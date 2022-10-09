@@ -19,11 +19,11 @@ lab:
 如果你的 Windows 计算机上尚未安装 Microsoft Power BI Desktop，则可以免费下载和安装。
 
 1. 从 [https://aka.ms/power-bi-desktop](https://aka.ms/power-bi-desktop?azure-portal=true) 下载 Power BI Desktop 安装程序。
-1. When the file has downloaded, open it, and use the setup wizard to install Power BI Desktop on your computer. This insatllation may take a few minutes.
+1. 下载文件后，将其打开，然后使用安装向导在计算机上安装 Power BI Desktop。 安装可能需要几分钟时间。
 
 ## <a name="import-data"></a>导入数据
 
-1. Open Power BI Desktop. The application interface should look similar to this:
+1. 打开 Power BI Desktop。 应用程序界面应如下所示：
 
     ![显示 Power BI Desktop 开始屏幕的屏幕截图。](images/power-bi-start.png)
 
@@ -41,7 +41,7 @@ lab:
 
 1. 在“访问 Web 内容”对话框中，选择“连接”。
 
-1. Verify that the URL opens a dataset containing customer data, as shown below. Then select <bpt id="p1">**</bpt>Load<ept id="p1">**</ept> to load the data into the data model for your report.
+1. 验证该 URL 是否打开包含客户数据的数据集，如下所示。 然后选择“加载”，将数据加载到报表的数据模型中。
 
     ![显示 Power BI 中显示的客户数据集的屏幕截图。](images/customers.png)
 
@@ -67,7 +67,7 @@ lab:
 
 导入的三个数据表已加载到数据模型中，现在你可以查看并对其进行优化。
 
-1. In Power BI Desktop, on the left-side edge, select the <bpt id="p1">**</bpt>Model<ept id="p1">**</ept> tab, and then arrange the tables in the model so you can see them. You can hide the panes on the right side by using the <bpt id="p1">**</bpt><ph id="ph1">&gt;&gt;</ph><ept id="p1">**</ept> icons:
+1. 在 Power BI Desktop 的左侧边缘，选择“模型”选项卡，然后排列模型中的表以便查看。 可使用 >> 图标隐藏右侧的窗格：
 
     ![显示 Power BI 中“模型”选项卡的屏幕截图。](images/model-tab.png)
 
@@ -77,12 +77,12 @@ lab:
 
     此步骤将确保收入值在报表可视化效果中显示为货币。
 
-1. In the products table, right-click the <bpt id="p1">**</bpt>Category<ept id="p1">**</ept> field (or open its <bpt id="p2">**</bpt><ph id="ph1">&amp;vellip;</ph><ept id="p2">**</ept> menu) and select <bpt id="p3">**</bpt>Create hierarchy<ept id="p3">**</ept>. This step creates a hierarchy named <bpt id="p1">**</bpt>Category Hierarchy<ept id="p1">**</ept>. You may need to expand or scroll in the <bpt id="p1">**</bpt>products<ept id="p1">**</ept> table to see this - you can also see it in the <bpt id="p2">**</bpt>Fields<ept id="p2">**</ept> pane:
+1. 在 products 表中，右键单击“Category”字段（或打开它的 &vellip; 菜单），然后选择“创建层次结构”  。 此步骤将创建一个名为 **Category Hierarchy** 的层次结构。 可能需要在 products 表中展开或滚动才能看到它 - 在“字段”窗格中也能看到它 ：
 
     ![显示如何在 Power BI 中添加 Category Hierarchy 的屏幕截图。](images/category-hierarchy.png)
 
-1. In the products table, right-click the <bpt id="p1">**</bpt>ProductName<ept id="p1">**</ept> field (or open its <bpt id="p2">**</bpt><ph id="ph1">&amp;vellip;</ph><ept id="p2">**</ept> menu) and select <bpt id="p3">**</bpt>Add to hierarchy<ept id="p3">**</ept><ph id="ph2"> &gt; </ph><bpt id="p4">**</bpt>Category Hierarchy<ept id="p4">**</ept>. This adds the <bpt id="p1">**</bpt>ProductName<ept id="p1">**</ept> field to the hierarchy you created previously.
-1. In the <bpt id="p1">**</bpt>Fields<ept id="p1">**</ept> pane, right-click <bpt id="p2">**</bpt>Category Hierarchy<ept id="p2">**</ept> (or open its <bpt id="p3">**</bpt>...<ept id="p3">**</ept> menu) and select <bpt id="p4">**</bpt>Rename<ept id="p4">**</ept>. Then rename the hierarchy to <bpt id="p1">**</bpt>Categorized Product<ept id="p1">**</ept>.
+1. 在 products 表中，右键单击 ProductName 字段（或打开它的 &vellip; 菜单），然后选择“添加到层次结构” > “Category Hierarchy”   。 这会将“ProductName”字段添加到之前创建的层次结构中。
+1. 在“字段”窗格中，右键单击“Category Hierarchy”（或打开它的“…”菜单）并选择“重命名”。 然后将层次结构重命名为 Categorized Product。
 
     ![显示如何在 Power BI 中重命名层次结构的屏幕截图。](images/rename-hierarchy.png)
 
@@ -95,9 +95,9 @@ lab:
 
 ## <a name="create-a-report"></a>创建报表
 
-Now you're almost ready to create a report. First you need to check some settings to ensure all visualizations are enabled.
+现在，差不多可以开始创建报表。 首先需要检查一些设置，确保所有可视化效果都已启用。
 
-1. On the <bpt id="p1">**</bpt>File<ept id="p1">**</ept> menu, select <bpt id="p2">**</bpt>Options and Settings<ept id="p2">**</ept>. Then select <bpt id="p1">**</bpt>Options<ept id="p1">**</ept>, and in the <bpt id="p2">**</bpt>Security<ept id="p2">**</ept> section, ensure that <bpt id="p3">**</bpt>Use Map and Filled Map visuals<ept id="p3">**</ept> is enabled and select <bpt id="p4">**</bpt>OK<ept id="p4">**</ept>.
+1. 在“文件”菜单上，选择“选项和设置”。 然后选择“选项”，在“安全性”部分中，确保“使用地图和着色地图视觉对象”已启用并选择“确定”。
 
     ![显示如何在 PowerBI 中设置“使用地图和着色地图视觉对象”属性的屏幕截图。](images/set-options.png)
 
@@ -107,42 +107,42 @@ Now you're almost ready to create a report. First you need to check some setting
 
     ![显示 Power BI 中“报表”选项卡的屏幕截图。](images/report-tab.png)
 
-1. In the ribbon, above the report design surface, select <bpt id="p1">**</bpt>Text Box<ept id="p1">**</ept> and add a text box containing the text <bpt id="p2">**</bpt>Sales Report<ept id="p2">**</ept> to the report. Format the text to make it bold with a font size of 32.
+1. 在功能区中，在报表设计图面上方选择“文本框”，然后将包含“Sales Report”文本的文本框添加到报表。 设置此文本格式为粗体，字体大小为 32。
 
     ![显示如何在 Power BI 中添加文本框的屏幕截图。](images/text-box.png)
 
-1. 下载文件后，将其打开，然后使用安装向导在计算机上安装 Power BI Desktop。
+1. 选择报表上的任意空白区域可取消选择文本框。 然后在“字段”窗格中，展开“Products”，然后选择“Categorized Products”字段。 此步骤会向报表添加一个表。
 
     ![显示如何在 Power BI 中向报表添加分类产品表的屏幕截图。](images/categorized-products-table.png)
 
-1. 安装可能需要几分钟时间。
+1. 在表仍处于选定状态的情况下，在“字段”窗格中展开“Orders”，然后选择“Revenue”。 Revenue 列会添加到表中。 可能需要扩展表的大小才能看到它。
 
-    The revenue is formatted as currency, as you specified in the model. However, you didn't specify the number of decimal places, so the values include fractional amounts. It won't matter for the visualizations you're going to create, but you could go back to the <bpt id="p1">**</bpt>Model<ept id="p1">**</ept> or <bpt id="p2">**</bpt>Data<ept id="p2">**</ept> tab and change the decimal places if you wish.
+    按照在模型中指定的，收入的格式为货币。 但由于没有指定小数位数，因此这些值将包含小数。 这不会影响将要创建的可视化效果，但你可以根据需要返回“模型”或“数据”选项卡来更改小数位数 。
 
     ![显示报表中包含收入的分类产品表的屏幕截图。](images/revenue-column.png)
 
-1. With the table still selected, in the <bpt id="p1">**</bpt>Visualizations<ept id="p1">**</ept> pane, select the <bpt id="p2">**</bpt>Stacked column chart<ept id="p2">**</ept> visualization. The table is changed to a column chart showing revenue by category.
+1. 在表仍处于选定状态的情况下，在“可视化”窗格中选择“堆积柱形图”可视化效果。 该表更改为按类别显示收入的柱形图。
 
     ![显示报表中包含收入的分类产品的堆积柱形图的屏幕截图。](images/stacked-column-chart.png)
 
-1. 打开 Power BI Desktop。
+1. 在所选柱形图上方，选择 &#8595; 图标启用向下钻取。 然后在柱形图中，选择第二列 (Road Bikes) 向下钻取并查看该类别中各个产品的收入。 此功能是可行的，因为你定义了类别和产品的层次结构。
 
     ![显示向下钻取以查看类别中的产品的柱形图的屏幕截图。](images/drill-down.png)
 
-1. 应用程序界面应如下所示：
-1. Select a blank area of the report, and then in the <bpt id="p1">**</bpt>Fields<ept id="p1">**</ept> pane, select the <bpt id="p2">**</bpt>Quantity<ept id="p2">**</ept> field in the <bpt id="p3">**</bpt>orders<ept id="p3">**</ept> table and the <bpt id="p4">**</bpt>Category<ept id="p4">**</ept> field in the <bpt id="p5">**</bpt>products<ept id="p5">**</ept> table. This step results in another column chart showing sales quantity by product category.
+1. 使用 &#x2191; 图标向上钻取到类别级别。 然后选择 (&#8595;) 图标关闭向下钻取功能 。
+1. 选择报表的空白区域，然后在“字段”窗格中，选择 orders 表中的“Quantity”字段和 products 表中的“Category”字段。 此步骤会生成另一个柱形图，其中按产品类别显示销售数量。
 1. 选中新的柱形图后，在“可视化”窗格中选择“饼图”，然后调整饼图大小并将其放置在按类别显示的收入旁边。
 
     ![显示按类别显示销售数量的饼图的屏幕截图。](images/category-pie-chart.png)
 
-1. Select a blank area of the report, and then in the <bpt id="p1">**</bpt>Fields<ept id="p1">**</ept> pane, select the <bpt id="p2">**</bpt>City<ept id="p2">**</ept> field in the <bpt id="p3">**</bpt>customers<ept id="p3">**</ept> table and then select the <bpt id="p4">**</bpt>Revenue<ept id="p4">**</ept> field in the <bpt id="p5">**</bpt>orders<ept id="p5">**</ept> table. This results in a map showing sales revenue by city. Rearrange and resize the visualizations as needed:
+1. 选择报表的空白区域，然后在“字段”窗格中，选择 customers 表中的“City”字段和 orders 表中的“Revenue”字段。 这会生成一个地图，其中按城市显示销售收入。 根据需要重新排列可视化效果和调整其大小：
 
     ![显示按城市显示收入的地图的屏幕截图。](images/revenue-map.png)
 
-1. In the map, note that you can drag, double-click, use a mouse-wheel, or pinch and drag on a touch screen to interact. Then select a specific city, and note that the other visualizations in the report are modified to highlight the data for the selected city.
+1. 请注意，在地图中，你可拖动、双击、使用鼠标滚轮，或在触摸屏上双指捏合和拖动来进行交互。 然后选择一个特定的城市，注意报表中的其他可视化效果已改为突出显示所选城市的数据。
 
     ![显示按城市显示收入的地图的屏幕截图，其中突出显示了所选城市的数据。](images/selected-data.png)
 
-1. On the <bpt id="p1">**</bpt>File<ept id="p1">**</ept> menu, select <bpt id="p2">**</bpt>Save<ept id="p2">**</ept>. Then save the file with an appropriate .pbix file name. You can open the file and explore data modeling and visualization further at your leisure.
+1. 在“文件”菜单中，选择“保存”。 然后使用相应的 .pbix 文件名保存该文件。 你可以在空闲时打开文件，进一步了解数据建模和可视化效果。
 
 如果你有 [Power BI 服务](https://www.powerbi.com/?azure-portal=true)订阅，则可以登录到你的帐户并将报表发布到 Power BI 工作区。 

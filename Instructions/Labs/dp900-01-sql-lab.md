@@ -10,13 +10,13 @@ lab:
 
 本练习大约需要 15 分钟才能完成。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
 ## <a name="provision-an-azure-sql-database-resource"></a>预配 Azure SQL 数据库资源
 
-1. In the <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://portal.azure.com?azure-portal=true)</ept>, select <bpt id="p2">**</bpt>&amp;#65291; Create a resource<ept id="p2">**</ept> from the upper left-hand corner and search for <bpt id="p3">*</bpt>Azure SQL<ept id="p3">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Azure SQL<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 [Azure 门户](https://portal.azure.com?azure-portal=true)的左上角选择“&#65291; 创建资源”，然后搜索“Azure SQL”。 然后在出现的“Azure SQL”页面中，选择“创建”。
 
 1. 查看可用的 Azure SQL 选项，然后在“SQL 数据库”磁贴中，确保选中“单一数据库”并选择“创建”。
 
@@ -26,12 +26,12 @@ lab:
     - **订阅**：选择 Azure 订阅。
     - **资源组**：使用你所选择的名称创建新资源组。
     -               数据库名称：AdventureWorks
-    - <bpt id="p1">**</bpt>Server<ept id="p1">**</ept>:  Select <bpt id="p2">**</bpt>Create new<ept id="p2">**</ept> and create a new server with a unique name in any available location. Use <bpt id="p1">**</bpt>SQL authentication<ept id="p1">**</ept> and specify your name as the server admin login and a suitably complex password (remember the password - you'll need it later!)
+    -                 **服务器**：选择“新建”，并在任何可用位置创建具有唯一名称的新服务器。 使用“SQL 身份验证”，并指定你的姓名作为服务器管理员登录名和一个适当复杂的密码（请记住密码 - 稍后你将需要它！）
     -               想要使用 SQL 弹性池吗？：否
     -               计算 + 存储：保持不变
     -               备份存储冗余：本地冗余备份存储
 
-1. On the <bpt id="p1">**</bpt>Create SQL Database<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Next :Networking &gt;<ept id="p2">**</ept>, and on the <bpt id="p3">**</bpt>Networking<ept id="p3">**</ept> page, in the <bpt id="p4">**</bpt>Network connectivity<ept id="p4">**</ept> section, select <bpt id="p5">**</bpt>Public endpoint<ept id="p5">**</ept>. Then select <bpt id="p1">**</bpt>Yes<ept id="p1">**</ept> for both options in the <bpt id="p2">**</bpt>Firewall rules<ept id="p2">**</ept> section to allow access to your database server from Azure services and your current client IP address.
+1. 在“创建 SQL 数据库”页上，选择“下一步: 网络 >”，然后在“网络”页上的“网络连接”部分，选择“公共终结点”    。 然后为“防火墙规则”部分中的两个选项选择“是”，以允许从 Azure 服务和当前客户端 IP 地址访问数据库服务器。
 
 1. 选择“下一步: 安全性 >”，并将“启用 Microsoft Defender for SQL”选项设置为“现在不启用”  。
 
@@ -39,7 +39,7 @@ lab:
 
 1. 依次选择“查看 + 创建”、“创建”，以创建 Azure SQL 数据库。
 
-1. Wait for deployment to complete. Then go to the resource that was deployed, which should look like this:
+1. 等待部署完成。 然后转到已部署的资源，它应该如下所示：
 
     ![Azure 门户的屏幕截图，其中显示了 SQL 数据库页面。](images//sql-database-portal.png)
 

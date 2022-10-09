@@ -10,7 +10,7 @@ lab:
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
@@ -19,19 +19,19 @@ lab:
 使用 Azure 存储的第一步是在 Azure 订阅中预配 Azure 存储帐户。
 
 1. 如果你还没有完成此操作，请登录 [Azure 门户](https://portal.azure.com?azure-portal=true)。
-1. On the Azure portal home page, select <bpt id="p1">**</bpt>&amp;#65291; Create a resource<ept id="p1">**</ept> from the upper left-hand corner and search for <bpt id="p2">*</bpt>Storage account<ept id="p2">*</ept>. Then in the resulting <bpt id="p1">**</bpt>Storage account<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>.
+1. 在 Azure 门户主页的左上角，选择“&#65291; 创建资源”，并搜索“存储帐户”。 然后在出现的“存储帐户”页中，选择“创建”。
 1. 在“创建存储帐户”页上，输入以下值：
-    - <bpt id="p1">**</bpt>Subscription<ept id="p1">**</ept>: If you're using a sandbox, select <bpt id="p2">*</bpt>Concierge Subscription<ept id="p2">*</ept>. Otherwise, select your Azure subscription.
-    - 资源组：如果使用沙盒，请选择现有资源组（其名称类似于 learn-xxxx...）。否则，请使用所选的名称创建一个新资源组。
+    - **订阅**：选择 Azure 订阅。
+    - 资源组：使用所选名称创建新资源组。
     -               存储帐户名称：使用小写字母和数字输入存储帐户的唯一名称。
     - 区域：选择任何可用位置。
     -               性能：标准
     -               冗余：本地冗余存储 (LRS)
 
-1. Select <bpt id="p1">**</bpt>Next: Advanced &gt;<ept id="p1">**</ept> and view the advanced configuration options. In particular, note that this is where you can enable hierarchical namespace to support Azure Data Lake Storage Gen2. Leave this option <bpt id="p1">**</bpt><bpt id="p2">&lt;u&gt;</bpt>unselected<ept id="p2">&lt;/u&gt;</ept><ept id="p1">**</ept> (you'll enable it later), and then select <bpt id="p3">**</bpt>Next: Networking &gt;<ept id="p3">**</ept> to view the networking options for your storage account.
-1. Select <bpt id="p1">**</bpt>Next: Data protection &gt;<ept id="p1">**</ept> and then in the <bpt id="p2">**</bpt>Recovery<ept id="p2">**</ept> section, <bpt id="p3">&lt;u&gt;</bpt>de<ept id="p3">&lt;/u&gt;</ept>select all of the <bpt id="p4">**</bpt>Enable soft delete...<ept id="p4">**</ept> options. These options retain deleted files for subsequent recovery, but can cause issues later when you enable hierarchical namespace.
+1. 选择“下一步: 高级 >”以查看高级配置选项。 特别要注意的是，可在此处启用分层命名空间，以支持 Azure Data Lake Storage Gen2。 将此选项保留为<u>“未选中”</u>状态（稍后会启用），然后选择“下一步: 网络 >”以查看存储帐户的网络选项。 
+1. 选择“下一步: 数据保护 >”，然后在“恢复”部分中，<u>取消</u>选中所有“启用软删除...”选项。   这些选项会保留已删除的文件以供后续恢复，但以后当你启用分层命名空间时，可能会导致问题。
 1. 继续转到其余的“下一步 >”页面，不更改任何默认设置，然后在“查看 + 创建”页上，等待你的选择通过验证，然后选择“创建”以创建 Azure 存储帐户。  
-1. Wait for deployment to complete. Then go to the resource that was deployed.
+1. 等待部署完成。 然后，转到已部署的资源。
 
 ## <a name="explore-blob-storage"></a>了解 Blob 存储
 
@@ -44,35 +44,35 @@ lab:
 1. 在存储容器的“Azure 门户”页左侧的“数据存储”部分中，选择“容器”。
 1. 在“容器”页中，选择“&#65291; 容器”，然后添加一个名为 data 的新容器，其公共访问级别为“专用(不允许匿名访问)”   。
 1. 创建“data”容器后，验证它是否在“容器”页中列出。
-1. In the pane on the left side, in the top section, select **Storage browser **. This page provides a browser-based interface that you can use to work with the data in your storage account.
+1. 在左侧窗格的顶部，选择“存储浏览器”****。 此页提供一个基于浏览器的界面，可用于处理存储帐户中的数据。
 1. 在“存储浏览器”页中，选择“Blob 容器”，然后验证是否已列出“data”容器。
 1. 选择“data”容器，注意它是空的。
 1. 选择“&#65291; 添加目录”，阅读有关文件夹的信息，然后创建名为 products 的新目录 。
-1. 在存储资源管理器中，验证当前视图是否显示刚刚创建的 **products** 文件夹的内容，观察页面顶部的“痕迹导航”是否反映了路径**Blob containers > data > products**。
+1. 在存储浏览器中，验证当前视图是否显示刚刚创建的“products”文件夹的内容，观察页面顶部的“痕迹导航”是否反映了路径“Blob 容器”>“data”>“products” 。
 1. 在痕迹导航中，选择“data”以切换到“data”容器，注意它<u>不</u>包含名为“products”的文件夹。
 
-    Folders in blob storage are virtual, and only exist as part of the path of a blob. Since the <bpt id="p1">**</bpt>products<ept id="p1">**</ept> folder contained no blobs, it isn't really there!
+    Blob 存储中的文件夹是虚拟文件夹，仅作为 blob 路径的一部分存在。 由于“products”文件夹不包含任何 blob，所以它并不真正存在！
 
 1. 使用“&#10514; 上传”按钮打开“上传 blob”面板。 
-1. In the <bpt id="p1">**</bpt>Upload blob<ept id="p1">**</ept> panel, select the <bpt id="p2">**</bpt>product1.json<ept id="p2">**</ept> file you saved on your local computer previously. Then in the <bpt id="p1">**</bpt>Advanced<ept id="p1">**</ept> section, in the <bpt id="p2">**</bpt>Upload to folder<ept id="p2">**</ept> box, enter <bpt id="p3">**</bpt>product_data<ept id="p3">**</ept> and select the <bpt id="p4">**</bpt>Upload<ept id="p4">**</ept> button.
+1. 在“上传 blob”面板中，选择先前保存在本地计算机上的 product1.json 文件。 然后，在“高级”部分的“上传到文件夹”框中，输入 product_data 并选择“上传”按钮。
 1. 如果“上传 blob”面板仍处于打开状态，请将其关闭，并验证是否已在“data”容器中创建 product_data 虚拟文件夹。
 1. 选择 product_data 文件夹，并验证它是否包含已上传的 product1.json blob。
 1. 在左侧的“数据存储”部分中，选择“容器”。
 1. 打开“data”容器，并验证是否已列出你创建的 product_data 文件夹。
-1. Select the <bpt id="p1">**</bpt>&amp;#x2027;&amp;#x2027;&amp;#x2027;<ept id="p1">**</ept> icon at the right-end of the folder, and note that it doesn't display any options. Folders in a flat namespace blob container are virtual, and can't be managed.
+1. 选择文件夹右端的 &#x2027;&#x2027;&#x2027; 图标，注意它不显示任何选项。 平面命名空间 Blob 容器中的文件夹是虚拟文件夹，不能进行管理。
 1. 使用“data”页右上角的“X”图标关闭页面并返回到“容器”页。
 
 ## <a name="explore-azure-data-lake-storage-gen2"></a>了解 Azure Data Lake Storage Gen2
 
-Azure Data Lake Store Gen2 support enables you to use hierarchical folders to organize and manage access to blobs. It also enables you to use Azure blob storage to host distributed file systems for common big data analytics platforms.
+Azure Data Lake Storage Gen2 支持使你能够使用分层文件夹来组织和管理对 blob 的访问。 它还使你能够使用 Azure Blob 存储来托管用于常见大数据分析平台的分布式文件系统。
 
 1. 从 `https://aka.ms/product2.json` 下载 [product2.json](https://aka.ms/product2.json?azure-portal=true) JSON 文件，并将它保存在你的计算机上（之前下载 product1.json 的同一文件夹中 - 稍后将它上传到 Blob 存储）。
 1. 在存储账户的“Azure 门户”页的左侧，向下滚动到“设置”部分，然后选择“Data Lake Gen2 升级” 。
-1. 在 Azure 门户主页的左上角，选择“&#65291; 创建资源”，并搜索“存储帐户”。
+1. 在“Data Lake Gen2 升级页”上，展开并完成每个步骤以升级存储帐户，从而启用分层命名空间并支持 Azure Data Lake Storage Gen2********。 这可能需要一些时间。
 1. 升级完成后，在左侧窗格中的顶部，选择“存储浏览器”，然后导航回 data Blob 容器的根目录，其中仍包含 product_data 文件夹。  
 1. 选择 product_data 文件夹，并确认它仍包含之前上传的 product1.json 文件。
 1. 使用“&#10514; 上传”按钮打开“上传 blob”面板。 
-1. 然后在出现的“存储帐户”页中，选择“创建”。
+1. 在“上传 blob”面板中，选择保存在本地计算机上的 product2.json 文件。 然后选择“上传”按钮。
 1. 如果“上传 blob”面板仍处于打开状态，请将其关闭，并验证 product_data 文件夹现在是否包含 product2.json 文件。
 1. 在左侧的“数据存储”部分中，选择“容器”。
 1. 打开“data”容器，并验证是否已列出你创建的 product_data 文件夹。
@@ -86,7 +86,7 @@ Azure 文件存储为创建基于云的文件共享提供了一种方法。
 1. 在存储容器的“Azure 门户”页左侧的“数据存储”部分中，选择“文件共享”。
 1. 在“文件共享”页中，选择“&#65291; 文件共享”，并使用“事务优化”层添加名为 files 的新文件共享  。
 1. 在“文件共享”中，打开新的“文件”共享。
-1. At the top of the page, select <bpt id="p1">**</bpt>Connect<ept id="p1">**</ept>. Then in the <bpt id="p1">**</bpt>Connect<ept id="p1">**</ept> pane, note that there are tabs for common operating systems (Windows, Linux, and macOS) that contain scripts you can run to connect to the shared folder from a client computer.
+1. 在页面顶部，选择“连接”。 然后，在“连接”窗格中，注意有常见操作系统（Windows、Linux 和 macOS）的选项卡，其中包含可运行以从客户端计算机连接到共享文件夹的脚本。
 1. 关闭“连接”窗格，然后关闭“文件”页以返回到 Azure 存储帐户的“文件共享”页。
 
 ## <a name="explore-azure-tables"></a>了解 Azure 表
@@ -104,7 +104,7 @@ Azure 表为需要存储数据值但不需要关系数据库的完整功能和�
     -               RowKey：1
 1. 选择“添加属性”，然后创建一个具有以下值的新属性：
 
-    |属性名称 | 类型 | Value |
+    |属性名称 | 类型 | 值 |
     | ------------ | ---- | ----- |
     | 名称 | String | 小组件 |
 
@@ -128,6 +128,6 @@ Azure 表为需要存储数据值但不需要关系数据库的完整功能和�
 
 1. 插入新实体后，验证表中是否显示了包含已停用产品的行。
 
-    You have manually entered data into the table using the storage browser interface. In a real scenario, application developers can use the Azure Storage Table API to build applications that read and write values to tables, making it a cost effective and scalable solution for NoSQL storage.
+    你已使用存储浏览器界面将数据手动输入到表中。 在实际场景中，应用程序开发人员可以使用 Azure 存储表 API 生成可读取表值和向表写入值的应用程序，这使得它成为 NoSQL 存储的经济高效且可缩放的解决方案。
 
 > 提示：如果已完成浏览 Azure 存储，则可以删除在本练习中创建的资源组。

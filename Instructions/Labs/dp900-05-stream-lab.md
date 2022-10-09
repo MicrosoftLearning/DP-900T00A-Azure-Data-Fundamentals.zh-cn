@@ -18,7 +18,7 @@ lab:
 
 1. 使用 Azure 订阅凭据在 [Azure 门户](https://portal.azure.com)中登录到 Azure 订阅。
 
-1. Use the <bpt id="p1">**</bpt>[<ph id="ph1">\&gt;</ph>_]<ept id="p1">**</ept> button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a <bpt id="p2">***</bpt>Bash<ept id="p2">***</ept> environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. 使用页面顶部搜索栏右侧的 [\>_] 按钮在 Azure 门户中新建 Cloud Shell，在出现提示时选择 Bash 环境并创建存储。 Cloud Shell 在 Azure 门户底部的窗格中提供命令行界面，如下所示：
 
     ![具有 Cloud Shell 窗格的 Azure 门户](./images/cloud-shell.png)
 
@@ -50,7 +50,7 @@ lab:
 
 ## <a name="explore-the-azure-resources"></a>探索 Azure 资源
 
-1. In the <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://portal.azure.com?azure-portal=true)</ept>, on the home page, select <bpt id="p2">**</bpt>Resource groups<ept id="p2">**</ept> to see the resource groups in your subscription. This should include the <bpt id="p1">**</bpt>learn*xxxxxxxxxxxxxxxxx...<ept id="p1">**</ept>* resource group identified by the setup script.
+1. 在 [Azure 门户](https://portal.azure.com?azure-portal=true)的主页上，选择“资源组”以查看订阅中的资源组。 这应包括安装脚本标识的 learn-xxxxxxxxxxxxxxxxx... 资源组**。
 2. 选择 learn-xxxxxxxxxxxxxxxxx... 资源组，并查看它所包含的资源，这些资源应包括**：
     - 名为 iothubxxxxxxxxxxxxx 的 IoT 中心，用于接收传入的设备数据****。
     - 名为 storexxxxxxxxxxxx 的存储帐户，将向其中写入数据处理结果****。
@@ -61,7 +61,7 @@ lab:
     > 注意：如果使用的是学习沙盒，则资源组可能还包含名为 cloudshellxxxxxxxx 的另一个存储帐户，该帐户用于存储用于运行安装脚本的 Azure Cloud Shell 的数据****。 
 
 3. 选择 streamxxxxxxxxxxxxx 流分析作业并在其“概述”页上查看信息，请注意以下详细信息**：
-    - The job has one <bpt id="p1">*</bpt>input<ept id="p1">*</ept> named <bpt id="p2">**</bpt>iotinput<ept id="p2">**</ept>, and one <bpt id="p3">*</bpt>output<ept id="p3">*</ept> named <bpt id="p4">**</bpt>bloboutput<ept id="p4">**</ept>. These reference the IoT Hub and Storage account created by the setup script.
+    - 该作业包含一个名为 iotinput 的输入和一个名为 bloboutput 的输出。 它们引用了 IoT 中心和安装脚本创建的存储帐户。
     - 该作业包含一个查询，该查询从 iotinput 输入读取数据，并通过计算每 10 秒处理的消息数来聚合该数据；将结果写入 bloboutput 输出。
 
 ## <a name="use-the-resources-to-analyze-streaming-data"></a>使用资源分析流数据

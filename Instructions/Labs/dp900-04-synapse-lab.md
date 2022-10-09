@@ -20,7 +20,7 @@ lab:
 
 1. 访问 [https://portal.azure.com](https://portal.azure.com?azure-portal=true) 以打开 Azure 门户，然后使用与你的 Azure 订阅关联的凭据登录。
 
-    > <bpt id="p1">**</bpt>Tip<ept id="p1">**</ept>:  Ensure you are working in the directory containing your subscription - indicated at the top right under your user ID. If not, select the user icon and switch directory.
+    >                 提示：确保使用右上方用户 ID 下显示的包含订阅的目录。 如果没有，请选择用户图标并切换目录。
 
 2. 在 Azure 门户的“主页”上，使用“+ 创建资源”图标创建一个新资源。
 3. 搜索“Azure Synapse Analytics”，并创建一个新的 Azure Synapse Analytics 资源，使其包含以下设置：
@@ -43,7 +43,7 @@ lab:
         - 帐户名：新建一个具有唯一名称的帐户，例如“datalake<your_name>”。
         - 文件系统名称：新建一个具有唯一名称的文件系统，例如“fs<your_name>”。
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: A Synapse Analytics workspace requires two resource groups in your Azure subscription; one for resources you explicitly create, and another for managed resources used by the service. It also requires a Data Lake storage account in which to store data, scripts, and other artifacts.
+    >                 注意：Synapse Analytics 工作区需要 Azure 订阅中的两个资源组；一个用于显式创建的资源，另一个用于服务使用的托管资源。 它还需要一个用于存储数据、脚本和其他项目的 Data Lake Storage 帐户。
 
 4. 输入这些详细信息后，选择“审阅并创建”，然后选择“创建”来创建工作区。
 5. 等待工作区的创建 - 此操作可能需要约 5 分钟。
@@ -57,11 +57,11 @@ lab:
 
 可以使用 Azure Synapse Analytics 执行的关键任务之一是定义管道，将数据从各种源传输到你的工作区（如有必要还会进行转换）以进行分析。
 
-1. 在 Synapse Studio 的主页上，选择“引入”，然后选择“内置复制任务”以打开“复制数据工具”工具。
+1. 在 Synapse Studio 的“主页”上，选择“引入”以打开“复制数据工具”工具  。
 2. 在“复制数据”工具的“属性”步骤上，确保已选中“内置复制任务”和“立即运行一次”，然后单击“下一步 >”。
 3. 在“源”步骤的“数据集”子步骤中，选择以下设置：
     -               源类型：全部
-    -               连接：创建新的连接，然后在显示的“链接服务”窗格中，在“文件”选项卡上，选择“HTTP”。然后，使用以下设置继续并创建与数据文件的连接：
+    - 连接：创建新的连接，然后在显示的“新建连接”窗格中，在“文件”选项卡上，选择“HTTP”。然后，使用以下设置继续并创建与数据文件的连接：*  *
         - 名称：AdventureWorks 产品
         - 说明：通过 HTTP 提供的产品列表
         - 通过集成运行时连接：AutoResolveIntegrationRuntime
@@ -91,7 +91,7 @@ lab:
     - 复制行为：无
     - 最大并发连接数：留空
     - 块大小 (MB)：留空
-9. On the <bpt id="p1">**</bpt>Target<ept id="p1">**</ept> step, in the <bpt id="p2">**</bpt>Configuration<ept id="p2">**</ept> substep, ensure that the following properties are selected. Then select <bpt id="p1">**</bpt>Next &gt;<ept id="p1">**</ept>:
+9. 在“目标”步骤的“配置”子步骤中，确保已选择以下属性。 然后选择“下一步 >”：
     - **文件格式**： DelimitedText
     - 列分隔符：逗号 (,)
     - 行分隔符：换行符 (\n)
@@ -108,13 +108,13 @@ lab:
 11. 在“查看并完成”步骤的“查看”子步骤上，阅读摘要，然后单击“下一步 >”。
 12. 在“部署”步骤中，等待管道部署完成，然后单击“完成”。
 13. 在 Synapse Studio 中，选择“监视”页，然后在“管道运行”选项卡中等待“复制产品”管道完成，状态为“成功”（可以使用“管道运行”页上的“&#8635; 刷新”按钮来刷新状态）    。
-14. On the <bpt id="p1">**</bpt>Data<ept id="p1">**</ept> page, select the <bpt id="p2">**</bpt>Linked<ept id="p2">**</ept> tab and expand the <bpt id="p3">**</bpt>Azure Data Lake Storage Gen 2<ept id="p3">**</ept> hierarchy until you see the file storage for your Synapse workspace. Then select the file storage to verify that a file named <bpt id="p1">**</bpt>products.csv<ept id="p1">**</ept> has been copied to this location, as shown here:
+14. 在“数据”页上，选择“链接”选项卡，然后展开“Azure Data Lake Storage Gen 2”层次结构，直到看到 Synapse 工作区的文件存储。 然后选择文件存储，验证名为 products.csv 的文件是否已复制到此位置，如下所示：
 
     ![此图像显示 Synapse Studio 展开的 Azure Data Lake Storage Gen2 层次结构，其中包含 Synapse 工作区的文件存储](images/synapse-storage.png)
 
 ## <a name="use-a-sql-pool-to-analyze-data"></a>使用 SQL 池来分析数据
 
-Now that you've ingested some data into your workspace, you can use Synapse Analytics to query and analyze it. One of the most common ways to query data is to use SQL, and in Synapse Analytics you can use a <bpt id="p1">*</bpt>SQL pool<ept id="p1">*</ept> to run SQL code.
+你已将一些数据引入工作区，现在可以使用 Synapse Analytics 来查询和分析数据了。 查询数据的最常见方法之一是使用 SQL，在 Synapse Analytics 中，可以使用 SQL 池来运行 SQL 代码。
 
 1. 在 Synapse Studio 中，右键单击 Synapse 工作区文件存储中的“products.csv”文件，指向“新建 SQL 脚本”，然后选择“选择前 100 行”。
 2. 在打开的“SQL 脚本 1”窗格中，查看已生成的 SQL 代码，应如下所示：
@@ -143,7 +143,7 @@ Now that you've ingested some data into your workspace, you can use Synapse Anal
     | 772 | Mountain-100 Silver, 42 | 山地自行车 | 3399.9900 |
     | ... | ... | ... | ... |
 
-5. Note the results consist of four columns named C1, C2, C3, and C4; and that the first row in the results contains the names of the data fields. To fix this problem, add a HEADER_ROW = TRUE parameters to the OPENROWSET function as shown here (replacing <bpt id="p1">*</bpt>datalakexx<ept id="p1">*</ept> and <bpt id="p2">*</bpt>fsxx<ept id="p2">*</ept> with the names of your data lake storage account and file system), and then rerun the query:
+5. 请注意，结果由名为 C1、C2、C3 和 C4 的四列组成；结果中的第一行包含数据字段的名称。 若要解决此问题，请向 OPENROWSET 函数添加一个 HEADER_ROW = TRUE 参数，如此处所示（将 datalakexx 和 fsxx 替换为你的数据湖存储帐户和文件系统的名称），然后重新运行查询：
 
     ```SQL
     SELECT
@@ -188,13 +188,13 @@ Now that you've ingested some data into your workspace, you can use Synapse Anal
     | 自行车车架 | 1 |
     | ... | ... |
 
-8. In the <bpt id="p1">**</bpt>Properties<ept id="p1">**</ept> pane for <bpt id="p2">**</bpt>SQL Script 1<ept id="p2">**</ept>, change the <bpt id="p3">**</bpt>Name<ept id="p3">**</ept> to <bpt id="p4">**</bpt>Count Products by Category<ept id="p4">**</ept>. Then in the toolbar, select <bpt id="p1">**</bpt>Publish<ept id="p1">**</ept> to save the script.
+8. 在“SQL 脚本 1”的“属性”窗格中，将“名称”更改为“产品计数(按类别)”。 然后在工具栏中，选择“发布”以保存脚本。
 
 9. 关闭“产品计数(按类别)”脚本窗格。
 
 10. 在 Synapse Studio 中，选择“开发”页，注意到已发布的“产品计数(按类别)”SQL 脚本已保存在那里。
 
-11. Select the <bpt id="p1">**</bpt>Count Products by Category<ept id="p1">**</ept> SQL script to reopen it. Then ensure that the script is connected to the <bpt id="p1">**</bpt>Built-in<ept id="p1">**</ept> SQL pool and run it to retrieve the product counts.
+11. 选择“产品计数(按类别)”SQL 脚本以重新打开它。 然后，确保该脚本已连接到”内置”SQL 池，并运行它来检索产品计数。
 
 12. 在“结果”窗格中，选择“图表”视图，然后为图表选择以下设置：
     - 图表类型：柱形图
@@ -212,7 +212,7 @@ Now that you've ingested some data into your workspace, you can use Synapse Anal
 
 ## <a name="use-a-spark-pool-to-analyze-data"></a>使用 Spark 池来分析数据
 
-While SQL is a common language for querying structured datasets, many data analysts find languages like Python useful to explore and prepare data for analysis. In Azure Synapse Analytics, you can run Python (and other) code in a <bpt id="p1">*</bpt>Spark pool<ept id="p1">*</ept>; which uses a distributed data processing engine based on Apache Spark.
+虽然 SQL 是用于查询结构化数据集的常见语言，但许多数据分析师发现，像 Python 这样的语言对研究和准备数据用于分析很有用。 在 Azure Synapse Analytics 中，可以在 Spark 池中运行 Python（及其其他）代码；它使用了基于 Apache Spark 的分布式数据处理引擎。
 
 1. 在 Synapse Studio 中，选择“管理”页。
 2. 选择“Apache Spark 池”选项卡，然后使用“+ 新建”图标，新建一个具有以下设置的 Spark 池：
@@ -222,7 +222,7 @@ While SQL is a common language for querying structured datasets, many data analy
     - 自动缩放：已启用
     - 节点数：3----3
 3. 审阅并创建 Spark 池，然后等待它部署完成（可能需要几分钟时间）。
-4. When the Spark pool has been deployed, in Synapse Studio, on the <bpt id="p1">**</bpt>Data<ept id="p1">**</ept> page, browse to the file system for your Synapse workspace. Then right-click <bpt id="p1">**</bpt>products.csv<ept id="p1">**</ept>, point to <bpt id="p2">**</bpt>New notebook<ept id="p2">**</ept>, and select <bpt id="p3">**</bpt>Load to DataFrame<ept id="p3">**</ept>.
+4. Spark 池部署完成后，在 Synapse Studio 中的“数据”页上，浏览到 Synapse 工作区的文件系统。 然后右键单击“products.csv”，指向“新建笔记本”，然后选择“加载到数据帧”。
 5. 在打开的“笔记本 1”窗格的“附加到”列表中，选择先前创建的“spark”Spark 池，并确保将“语言”设置为“PySpark (Python)”。
 6. 查看笔记本中的第一个（也是唯一一个）单元格中的代码，它应该如下所示：
 
@@ -235,7 +235,7 @@ While SQL is a common language for querying structured datasets, many data analy
     display(df.limit(10))
     ```
 
-7.                  提示：确保使用右上方用户 ID 下显示的包含订阅的目录。
+7.  选择代码单元左侧的“&#9655; 运行”来运行它，并等待结果。 当你第一次在笔记本中运行单元格时，Spark 池会启动，因此可能需要一分钟左右的时间来返回任何结果。
 
     > 注意：如果由于 Python 内核尚不可用而发生错误，请再次运行该单元。
 
@@ -285,7 +285,7 @@ While SQL is a common language for querying structured datasets, many data analy
     | 车轮 | 14 |
     | ... | ... |
 
-14. 如果没有，请选择用户图标并切换目录。
+14. 在单元格的结果输出中，选择“图表”视图。 生成的图表应如下所示：
 
     ![显示类别计数图表视图的图像](images/bar-chart.png)
 
