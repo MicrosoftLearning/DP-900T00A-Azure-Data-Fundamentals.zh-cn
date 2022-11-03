@@ -10,7 +10,7 @@ lab:
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>准备工作
+## <a name="before-you-start"></a>开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
@@ -44,7 +44,7 @@ lab:
 1. 在存储容器的“Azure 门户”页左侧的“数据存储”部分中，选择“容器”。
 1. 在“容器”页中，选择“&#65291; 容器”，然后添加一个名为 data 的新容器，其公共访问级别为“专用(不允许匿名访问)”   。
 1. 创建“data”容器后，验证它是否在“容器”页中列出。
-1. 在左侧窗格的顶部，选择“存储浏览器”****。 此页提供一个基于浏览器的界面，可用于处理存储帐户中的数据。
+1. 在左侧窗格的顶部，选择“存储浏览器”。 此页提供一个基于浏览器的界面，可用于处理存储帐户中的数据。
 1. 在“存储浏览器”页中，选择“Blob 容器”，然后验证是否已列出“data”容器。
 1. 选择“data”容器，注意它是空的。
 1. 选择“&#65291; 添加目录”，阅读有关文件夹的信息，然后创建名为 products 的新目录 。
@@ -68,7 +68,7 @@ Azure Data Lake Storage Gen2 支持使你能够使用分层文件夹来组织和
 
 1. 从 `https://aka.ms/product2.json` 下载 [product2.json](https://aka.ms/product2.json?azure-portal=true) JSON 文件，并将它保存在你的计算机上（之前下载 product1.json 的同一文件夹中 - 稍后将它上传到 Blob 存储）。
 1. 在存储账户的“Azure 门户”页的左侧，向下滚动到“设置”部分，然后选择“Data Lake Gen2 升级” 。
-1. 在“Data Lake Gen2 升级页”上，展开并完成每个步骤以升级存储帐户，从而启用分层命名空间并支持 Azure Data Lake Storage Gen2********。 这可能需要一些时间。
+1. 在“Data Lake Gen2 升级”页上，展开并完成每个步骤以升级存储帐户，从而启用分层命名空间并支持 Azure Data Lake Storage Gen2。 这可能需要一些时间。
 1. 升级完成后，在左侧窗格中的顶部，选择“存储浏览器”，然后导航回 data Blob 容器的根目录，其中仍包含 product_data 文件夹。  
 1. 选择 product_data 文件夹，并确认它仍包含之前上传的 product1.json 文件。
 1. 使用“&#10514; 上传”按钮打开“上传 blob”面板。 
