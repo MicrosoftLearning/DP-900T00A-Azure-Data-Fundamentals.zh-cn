@@ -9,16 +9,16 @@ lab:
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>准备工作
+## <a name="before-you-start"></a>开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
 ## <a name="create-a-cosmos-db-account"></a>创建 Cosmos DB 帐户
 
-若要使用 Cosmos DB，必须在 Azure 订阅中预配 Cosmos DB 帐户。 在此练习中，你将预配一个 Cosmos DB 帐户，该帐户使用核心 (SQL) API。
+若要使用 Cosmos DB，必须在 Azure 订阅中预配 Cosmos DB 帐户。 在此练习中，你将预配一个 Cosmos DB 帐户，该帐户使用 Azure Cosmos DB for NoSQL。
 
 1. 在 Azure 门户中，选择左上角的“+ 创建资源”，然后搜索“Azure Cosmos DB”。  在结果中，选择 Azure Cosmos DB，然后选择“创建” 。
-1. 在“核心(SQL) - 推荐”框中，选择“创建”。
+1. 在“Azure Cosmos DB for NoSQL”磁贴中，选择“创建”。 
 1. 输入以下详细信息，然后选择“查看 + 创建”：
     - **订阅**：如果正在使用沙盒，请选择“助手订阅”。 否则，请选择 Azure 订阅。
     - 资源组：如果使用沙盒，请选择现有资源组（其名称类似于 learn-xxxx...）。否则，请使用所选的名称创建一个新资源组。
@@ -71,6 +71,6 @@ lab:
 1. 使用“执行查询”按钮运行修订后的查询并查看结果，其中包括具有包含文本“Any St.”的“地址”字段的任何项的 JSON 实体。
 1. 关闭 SQL 查询编辑器，放弃更改。
 
-    已了解如何使用 Azure 门户中的数据资源管理器界面在 Cosmos DB 数据库中创建和查询 JSON 实体。 在实际方案中，应用程序开发人员将使用多种特定于编程语言的软件开发工具包 (sdk) 之一来调用核心 (SQL) API，并处理数据库中的数据。
+    已了解如何使用 Azure 门户中的数据资源管理器界面在 Cosmos DB 数据库中创建和查询 JSON 实体。 在实际方案中，应用程序开发人员将使用多种特定于编程语言的软件开发工具包 (SDK) 之一来调用 NoSQL API，并处理数据库中的数据。
 
 > 提示：如果已完成浏览 Azure Cosmos DB，则可以删除在本练习中创建的资源组。
