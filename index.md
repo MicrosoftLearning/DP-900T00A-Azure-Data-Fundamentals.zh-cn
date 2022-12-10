@@ -8,7 +8,7 @@ layout: home
 
 这些动手练习旨在支持 [Microsoft Learn](https://docs.microsoft.com/training/) 上的培训内容。
 
-若要完成这些练习，需要一个 Microsoft Azure 订阅，在该订阅中具有管理许可。 可在 [https://azure.microsoft.com](https://azure.microsoft.com) 注册免费试用版。
+若要完成这些练习，你需要一个有管理权限的 Microsoft Azure 订阅。 可在 [https://azure.microsoft.com](https://azure.microsoft.com) 注册免费试用版。
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
 | 练习 |
