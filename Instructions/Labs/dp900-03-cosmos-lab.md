@@ -9,7 +9,7 @@ lab:
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
