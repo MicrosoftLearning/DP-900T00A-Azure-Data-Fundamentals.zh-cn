@@ -10,7 +10,7 @@ lab:
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>准备工作
+## <a name="before-you-start"></a>开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
@@ -58,9 +58,7 @@ lab:
 
     如果这三种资源都未列出，请单击“&#8635; 刷新”按钮，直到它们出现为止。
 
-    > 注意：如果使用的是学习沙盒，则资源组可能还包含名为 cloudshellxxxxxxxx 的另一个存储帐户，该帐户用于存储用于运行安装脚本的 Azure Cloud Shell 的数据****。 
-
-3. 选择 streamxxxxxxxxxxxxx 流分析作业并在其“概述”页上查看信息，请注意以下详细信息**：
+ 3. 选择 streamxxxxxxxxxxxxx 流分析作业并在其“概述”页上查看信息，请注意以下详细信息**：
     - 该作业包含一个名为 iotinput 的输入和一个名为 bloboutput 的输出。 它们引用了 IoT 中心和安装脚本创建的存储帐户。
     - 该作业包含一个查询，该查询从 iotinput 输入读取数据，并通过计算每 10 秒处理的消息数来聚合该数据；将结果写入 bloboutput 输出。
 
