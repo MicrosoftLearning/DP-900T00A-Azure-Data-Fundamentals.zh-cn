@@ -1,12 +1,13 @@
 ---
 lab:
-    title: '实验室 01：预配 Azure 关系数据库服务'
-    module: '模块 02：探索 Azure 中的关系数据'
+  title: 实验室 01：预配 Azure 关系数据库服务
+  module: 'Module 02: Explore relational data in Azure'
 ---
 
-## 说明
-作为 Contoso 的数据工程师，你需要为 Azure 创建和配置 SQL Server、PostgreSQL 和 MySQL 服务器。
+## <a name="instructions"></a>说明
 
-在此实验室中，你将为 Azure 创建和配置以下服务器之一：SQL Server、PostgreSQL 或 MySQL。
+作为 Contoso 的数据工程师，要求你为 Azure 创建和配置 SQL Server、PostgreSQL 和 MySQL 服务器。
 
-1.	转到 Microsoft Learn 练习 https://aka.ms/dp900lab01-chs 并在浏览器中完成单元： 
+在此实验室中，你将为 Azure 创建和配置以下其中一个服务器：SQL Server、PostgreSQL 或 MySQL。
+
+1.  转到 https://aka.ms/dp900lab01 的 Microsoft Learn 练习并在浏览器中完成该单元： 
