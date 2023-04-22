@@ -4,7 +4,7 @@ permalink: index.html
 layout: home
 ---
 
-# <a name="azure-data-fundamentals-exercises"></a>Azure 数据基础知识练习
+# Azure 数据基础知识练习
 
 这些动手练习旨在支持 [Microsoft Learn](https://docs.microsoft.com/training/) 上的培训内容。
 
@@ -13,5 +13,5 @@ layout: home
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
 | 练习 |
 | --- |
-{% 表示实验室 % 中的活动}| [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
+{% for activity in labs  %}| [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
