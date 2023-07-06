@@ -1,10 +1,10 @@
-# <a name="dp-900-trainer-lab-mapping"></a>DP-900 培训师实验室对应
+# DP-900 培训师实验室对应
 
 本课程“DP-900：Microsoft Azure 数据基础知识”中有一部分专为讲师指导式培训准备的实验室。 
 
 > 注意：讲师可以选择让学生在自己的时间内完成一个或多个实验室，方法是使用关联的 Learn 学习路径中的练习 (https://docs.microsoft.com/users/23110622/collections/0kjyh8rn5gdrjj) 。 
 
-## <a name="dp-900-module-mapping-to-labs"></a>DP-900 模块与实验室的对应
+## DP-900 模块与实验室的对应
 
 | 模块 | 实验室 | Markdown 文件 |
 | --- | --- | --- |

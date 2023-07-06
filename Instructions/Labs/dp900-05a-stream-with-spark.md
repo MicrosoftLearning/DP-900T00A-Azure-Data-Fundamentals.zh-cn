@@ -4,17 +4,17 @@ lab:
   module: Explore fundamentals of real-time analytics
 ---
 
-# <a name="explore-spark-streaming-in-azure-synapse-analytics"></a>探索 Azure Synapse Analytics 中的 Spark 流式处理
+# 探索 Azure Synapse Analytics 中的 Spark 流式处理
 
 在此练习中，你将使用 Spark 结构化流和 Azure Synapse Analytics 中的增量表来处理流数据。
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>准备工作
+## 开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-## <a name="provision-a-synapse-analytics-workspace"></a>预配 Synapse Analytics 工作区
+## 预配 Synapse Analytics 工作区
 
 要使用 Synapse Analytics，必须在 Azure 订阅中预配一个 Synapse Analytics 工作区资源。
 
@@ -43,7 +43,7 @@ lab:
 
     ![Synapse Studio](images/synapse-studio.png)
 
-## <a name="create-a-spark-pool"></a>创建 Spark 池
+## 创建 Spark 池
 
 若要使用 Spark 来处理流数据，需要将 Spark 池添加到 Azure Synapse 工作区。
 
@@ -56,7 +56,7 @@ lab:
     - 节点数：3----3
 3. 查看并创建 Spark 池，然后等待它部署完成（可能需要几分钟时间）。
 
-## <a name="explore-stream-processing"></a>探索流处理
+## 探索流处理
 
 若要探索如何使用 Spark 进行流处理，将使用包含 Python 代码和注释的笔记本，以帮助使用 Spark 结构化流和增量表执行一些基本的流处理。
 
@@ -65,7 +65,7 @@ lab:
 3. 在“&#65291;”菜单上，选择“&#8612; 导入”，然后选择本地计算机上的“结构化流和 Delta Tables.ipynb”文件。
 4. 按照笔记本中的说明将其附加到 Spark 池，并运行其中包含的代码单元，以探索使用 Spark 进行流处理的各种方法。
 
-## <a name="delete-azure-resources"></a>删除 Azure 资源
+## 删除 Azure 资源
 
 >           注意：如果打算完成使用 Azure Synapse Analytics 的其他练习，可以跳过本部分。 否则，请按照以下步骤避免不必要的 Azure 花销。
 
