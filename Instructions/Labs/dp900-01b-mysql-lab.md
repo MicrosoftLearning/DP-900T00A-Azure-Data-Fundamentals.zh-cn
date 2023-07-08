@@ -4,17 +4,17 @@ lab:
   module: Explore relational data in Azure
 ---
 
-# <a name="explore-azure-database-for-mysql"></a>探索 Azure Database for MySQL
+# 探索 Azure Database for MySQL
 
 在本练习中，你将在 Azure 订阅中预配 Azure Database for MySQL 资源。
 
 完成本实验室大约需要 5 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## 开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-## <a name="provision-an-azure-database-for-mysql-resource"></a>预配 Azure Database for MySQL 资源
+## 预配 Azure Database for MySQL 资源
 
 在本练习中，你将预配 Azure Database for MySQL 资源。
 
