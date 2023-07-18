@@ -4,17 +4,17 @@ lab:
   module: Explore fundamentals of large-scale data warehousing
 ---
 
-# <a name="explore-data-analytics-in-azure-with-azure-synapse-analytics"></a>使用 Azure Synapse Analytics 探索 Azure 中的数据分析
+# 使用 Azure Synapse Analytics 探索 Azure 中的数据分析
 
 在本练习中，你将在 Azure 订阅中预配一个 Azure Synapse Analytics 工作区，并使用它来引入和查询数据。
 
 完成本实验室大约需要 30 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## 开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-## <a name="provision-an-azure-synapse-analytics-workspace"></a>预配 Azure Synapse Analytics 工作区
+## 预配 Azure Synapse Analytics 工作区
 
 要使用 Azure Synapse Analytics，必须在 Azure 订阅中预配一个 Azure Synapse Analytics 工作区资源。
 
@@ -53,7 +53,7 @@ lab:
 
     ![此图像显示展开的 Synapse Studio 菜单，它用于管理资源和执行数据分析任务](images/synapse-studio.png)
 
-## <a name="ingest-data"></a>引入数据
+## 引入数据
 
 可以使用 Azure Synapse Analytics 执行的关键任务之一是定义管道，将数据从各种源传输到你的工作区（如有必要还会进行转换）以进行分析。
 
@@ -61,7 +61,7 @@ lab:
 2. 在“复制数据”工具的“属性”步骤上，确保已选中“内置复制任务”和“立即运行一次”，然后单击“下一步 >”。
 3. 在“源”步骤的“数据集”子步骤中，选择以下设置：
     -               源类型：全部
-    - 连接：创建新的连接，然后在显示的“新建连接”窗格中，在“文件”选项卡上，选择“HTTP”。然后，使用以下设置继续并创建与数据文件的连接：*  *
+    - 连接：创建新的连接，然后在显示的“新建连接”窗格中，在“通用协议”选项卡上，选择“HTTP”。然后，使用以下设置继续并创建与数据文件的连接：*  *
         - 名称：AdventureWorks 产品
         - 说明：通过 HTTP 提供的产品列表
         - 通过集成运行时连接：AutoResolveIntegrationRuntime
@@ -112,7 +112,7 @@ lab:
 
     ![此图像显示 Synapse Studio 展开的 Azure Data Lake Storage Gen2 层次结构，其中包含 Synapse 工作区的文件存储](images/synapse-storage.png)
 
-## <a name="use-a-sql-pool-to-analyze-data"></a>使用 SQL 池来分析数据
+## 使用 SQL 池来分析数据
 
 你已将一些数据引入工作区，现在可以使用 Synapse Analytics 来查询和分析数据了。 查询数据的最常见方法之一是使用 SQL，在 Synapse Analytics 中，可以使用 SQL 池来运行 SQL 代码。
 
@@ -210,7 +210,7 @@ lab:
 
     ![显示产品计数图表视图的图像](images/column-chart.png)
 
-## <a name="use-a-spark-pool-to-analyze-data"></a>使用 Spark 池来分析数据
+## 使用 Spark 池来分析数据
 
 虽然 SQL 是用于查询结构化数据集的常见语言，但许多数据分析师发现，像 Python 这样的语言对研究和准备数据用于分析很有用。 在 Azure Synapse Analytics 中，可以在 Spark 池中运行 Python（及其其他）代码；它使用了基于 Apache Spark 的分布式数据处理引擎。
 
@@ -291,7 +291,7 @@ lab:
 
 15. 关闭“笔记本 1”窗格并放弃所做的更改。
 
-## <a name="delete-azure-resources"></a>删除 Azure 资源
+## 删除 Azure 资源
 
 你已完成对 Azure Synapse Analytics 的探索，现在应删除已创建的资源，以避免产生不必要的 Azure 成本。
 

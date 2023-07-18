@@ -4,24 +4,24 @@ lab:
   module: Explore fundamentals of data visualization
 ---
 
-# <a name="explore-fundamentals-of-data-visualization-with-power-bi"></a>使用 Power BI 探索数据可视化的基础知识
+# 使用 Power BI 探索数据可视化的基础知识
 
 在本练习中，你将使用 Microsoft Power BI Desktop 创建包含交互式数据可视化效果的数据模型和报表。
 
 完成本实验室大约需要 20 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## 开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-### <a name="install-power-bi-desktop"></a>安装 Power BI Desktop
+### 安装 Power BI Desktop
 
 如果你的 Windows 计算机上尚未安装 Microsoft Power BI Desktop，则可以免费下载和安装。
 
 1. 从 [https://aka.ms/power-bi-desktop](https://aka.ms/power-bi-desktop?azure-portal=true) 下载 Power BI Desktop 安装程序。
 1. 下载文件后，将其打开，然后使用安装向导在计算机上安装 Power BI Desktop。 安装可能需要几分钟时间。
 
-## <a name="import-data"></a>导入数据
+## 导入数据
 
 1. 打开 Power BI Desktop。 应用程序界面应如下所示：
 
@@ -63,7 +63,7 @@ lab:
     https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/raw/master/power-bi/orders.csv
     ```
 
-## <a name="explore-a-data-model"></a>了解数据模型
+## 了解数据模型
 
 导入的三个数据表已加载到数据模型中，现在你可以查看并对其进行优化。
 
@@ -86,14 +86,14 @@ lab:
 
     ![显示如何在 Power BI 中重命名层次结构的屏幕截图。](images/rename-hierarchy.png)
 
-1. 在左侧边缘，选择“数据”选项卡，然后在“字段”窗格中，选择 customers 表。
+1. 在左侧边缘，选择“数据视图”选项卡，然后在“数据”窗格中，选择 customers 表  。
 1. 选择“City”列标题，然后将其“数据类别”属性设置为“City”：
 
     ![显示如何在 Power BI 中设置数据类别的屏幕截图。](images/data-category.png)
 
     此步骤将确保将此列中的值解释为城市名称，在你打算包括地图可视化效果时，这很有用。
 
-## <a name="create-a-report"></a>创建报表
+## 创建报表
 
 现在，差不多可以开始创建报表。 首先需要检查一些设置，确保所有可视化效果都已启用。
 
@@ -103,7 +103,7 @@ lab:
 
     此设置确保在报表中能够包括地图可视化效果。
 
-1. 在左侧边缘，选择“报表”选项卡并查看报表设计界面。
+1. 在左侧边缘，选择“报表视图”选项卡并查看报表设计界面。
 
     ![显示 Power BI 中“报表”选项卡的屏幕截图。](images/report-tab.png)
 
@@ -111,11 +111,11 @@ lab:
 
     ![显示如何在 Power BI 中添加文本框的屏幕截图。](images/text-box.png)
 
-1. 选择报表上的任意空白区域可取消选择文本框。 然后在“字段”窗格中，展开“Products”，然后选择“Categorized Products”字段。 此步骤会向报表添加一个表。
+1. 选择报表上的任意空白区域可取消选择文本框。 然后在“数据”窗格中，展开“Products”，然后选择“Categorized Products”字段  。 此步骤会向报表添加一个表。
 
     ![显示如何在 Power BI 中向报表添加分类产品表的屏幕截图。](images/categorized-products-table.png)
 
-1. 在表仍处于选定状态的情况下，在“字段”窗格中展开“Orders”，然后选择“Revenue”。 Revenue 列会添加到表中。 可能需要扩展表的大小才能看到它。
+1. 在表仍处于选定状态的情况下，在“数据”窗格中展开“Orders”，然后选择“Revenue”  。 Revenue 列会添加到表中。 可能需要扩展表的大小才能看到它。
 
     按照在模型中指定的，收入的格式为货币。 但由于没有指定小数位数，因此这些值将包含小数。 这不会影响将要创建的可视化效果，但你可以根据需要返回“模型”或“数据”选项卡来更改小数位数 。
 
@@ -125,17 +125,17 @@ lab:
 
     ![显示报表中包含收入的分类产品的堆积柱形图的屏幕截图。](images/stacked-column-chart.png)
 
-1. 在所选柱形图上方，选择 &#8595; 图标启用向下钻取。 然后在柱形图中，选择第二列 (Road Bikes) 向下钻取并查看该类别中各个产品的收入。 此功能是可行的，因为你定义了类别和产品的层次结构。
+1. 在所选柱形图上方，选择 &#8595; 图标启用向下钻取。 然后在柱形图中，选择第二列以向下钻取并查看该类别中各个产品的收入。 此功能是可行的，因为你定义了类别和产品的层次结构。
 
     ![显示向下钻取以查看类别中的产品的柱形图的屏幕截图。](images/drill-down.png)
 
 1. 使用 &#x2191; 图标向上钻取到类别级别。 然后选择 (&#8595;) 图标关闭向下钻取功能 。
-1. 选择报表的空白区域，然后在“字段”窗格中，选择 orders 表中的“Quantity”字段和 products 表中的“Category”字段。 此步骤会生成另一个柱形图，其中按产品类别显示销售数量。
+1. 选择报表的空白区域，然后在“数据”窗格中，选择 orders 表中的“Quantity”字段和 products 表中的“Category”字段    。 此步骤会生成另一个柱形图，其中按产品类别显示销售数量。
 1. 选中新的柱形图后，在“可视化”窗格中选择“饼图”，然后调整饼图大小并将其放置在按类别显示的收入旁边。
 
     ![显示按类别显示销售数量的饼图的屏幕截图。](images/category-pie-chart.png)
 
-1. 选择报表的空白区域，然后在“字段”窗格中，选择 customers 表中的“City”字段和 orders 表中的“Revenue”字段。 这会生成一个地图，其中按城市显示销售收入。 根据需要重新排列可视化效果和调整其大小：
+1. 选择报表的空白区域，然后在“数据”窗格中，选择 customers 表中的“City”字段和 orders 表中的“Revenue”字段    。 这会生成一个地图，其中按城市显示销售收入。 根据需要重新排列可视化效果和调整其大小：
 
     ![显示按城市显示收入的地图的屏幕截图。](images/revenue-map.png)
 

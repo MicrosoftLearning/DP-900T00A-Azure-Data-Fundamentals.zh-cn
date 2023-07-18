@@ -4,17 +4,17 @@ lab:
   module: Explore Azure Storage for non-relational data
 ---
 
-# <a name="explore-azure-storage"></a>探索 Azure 存储
+# 探索 Azure 存储
 
 在本练习中，你将在 Azure 订阅中预配一个 Azure 存储帐户，并探索可以使用它来存储数据的各种方式。
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>准备工作
+## 开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-## <a name="provision-an-azure-storage-account"></a>预配 Azure 存储帐户
+## 预配 Azure 存储帐户
 
 使用 Azure 存储的第一步是在 Azure 订阅中预配 Azure 存储帐户。
 
@@ -30,10 +30,10 @@ lab:
 
 1. 选择“下一步: 高级 >”以查看高级配置选项。 特别要注意的是，可在此处启用分层命名空间，以支持 Azure Data Lake Storage Gen2。 将此选项保留为<u>“未选中”</u>状态（稍后会启用），然后选择“下一步: 网络 >”以查看存储帐户的网络选项。 
 1. 选择“下一步: 数据保护 >”，然后在“恢复”部分中，<u>取消</u>选中所有“启用软删除...”选项。   这些选项会保留已删除的文件以供后续恢复，但以后当你启用分层命名空间时，可能会导致问题。
-1. 继续转到其余的“下一步 >”页面，不更改任何默认设置，然后在“查看 + 创建”页上，等待你的选择通过验证，然后选择“创建”以创建 Azure 存储帐户。  
+1. 继续转到其余的“下一步 >”页面，不更改任何默认设置，然后在“查看”页上，等待你的选择通过验证，然后选择“创建”以创建 Azure 存储帐户。  
 1. 等待部署完成。 然后，转到已部署的资源。
 
-## <a name="explore-blob-storage"></a>了解 Blob 存储
+## 了解 Blob 存储
 
 现在，你已有一个 Azure 存储帐户，可以为 blob 数据创建容器。
 
@@ -62,7 +62,7 @@ lab:
 1. 选择文件夹右端的 &#x2027;&#x2027;&#x2027; 图标，注意它不显示任何选项。 平面命名空间 Blob 容器中的文件夹是虚拟文件夹，不能进行管理。
 1. 使用“data”页右上角的“X”图标关闭页面并返回到“容器”页。
 
-## <a name="explore-azure-data-lake-storage-gen2"></a>了解 Azure Data Lake Storage Gen2
+## 了解 Azure Data Lake Storage Gen2
 
 Azure Data Lake Storage Gen2 支持使你能够使用分层文件夹来组织和管理对 blob 的访问。 它还使你能够使用 Azure Blob 存储来托管用于常见大数据分析平台的分布式文件系统。
 
@@ -79,7 +79,7 @@ Azure Data Lake Storage Gen2 支持使你能够使用分层文件夹来组织和
 1. 选择文件夹右端的 &#x2027;&#x2027;&#x2027; 图标，并注意在启用分层命名空间后，你可以在文件夹级别执行配置任务；包括重命名文件夹和设置权限。
 1. 使用“data”页右上角的“X”图标关闭页面并返回到“容器”页。
 
-## <a name="explore-azure-files"></a>了解 Azure 文件存储
+## 了解 Azure 文件存储
 
 Azure 文件存储为创建基于云的文件共享提供了一种方法。
 
@@ -89,7 +89,7 @@ Azure 文件存储为创建基于云的文件共享提供了一种方法。
 1. 在页面顶部，选择“连接”。 然后，在“连接”窗格中，注意有常见操作系统（Windows、Linux 和 macOS）的选项卡，其中包含可运行以从客户端计算机连接到共享文件夹的脚本。
 1. 关闭“连接”窗格，然后关闭“文件”页以返回到 Azure 存储帐户的“文件共享”页。
 
-## <a name="explore-azure-tables"></a>了解 Azure 表
+## 了解 Azure 表
 
 Azure 表为需要存储数据值但不需要关系数据库的完整功能和结构的应用程序提供了键/值存储。
 
