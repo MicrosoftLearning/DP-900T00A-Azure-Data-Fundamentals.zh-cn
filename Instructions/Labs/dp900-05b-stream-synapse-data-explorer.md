@@ -4,17 +4,19 @@ lab:
   module: Explore fundamentals of real-time analytics
 ---
 
-# <a name="explore-azure-synapse-data-explorer"></a>了解 Azure Synapse 数据资源管理器
+# 了解 Azure Synapse 数据资源管理器
+
+> 注意：由于产品更改，本实验室的“创建数据库并引入数据”部分存在一些已知问题。 我们正在努力解决这些问题。
 
 在此练习中，你将使用 Azure Synapse 数据资源管理器分析时序数据。
 
 完成本实验室大约需要 25 分钟。
 
-## <a name="before-you-start"></a>准备工作
+## 准备工作
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-## <a name="provision-a-synapse-analytics-workspace"></a>预配 Synapse Analytics 工作区
+## 预配 Synapse Analytics 工作区
 
 > 提示：如果你在之前的练习中已经有了Azure Synapse 工作区，那么跳过这一节，直接进入[创建一个数据资源管理器池](#create-a-data-explorer-pool) .
 
@@ -39,9 +41,9 @@ lab:
 1. 等待工作区的创建 - 此操作可能需要约 5 分钟。
 1. 部署完成后，转到创建的资源组，并注意它包含你的 Synapse Analytics 工作区和一个 Data Lake Storage 帐户。
 1. 选择 Synapse 工作区，并在其“概述”页的“打开 Synapse Studio”卡中选择“打开”，在新浏览器选项卡中打开 Synapse Studio。Synapse Studio 是一个基于 Web 的界面，可用于处理 Synapse Analytics 工作区。
-1. 在 Synapse Studio 左侧，使用 &rsaquo;&rsaquo; 图标展开菜单，这将显示 Synapse Studio 中用于管理资源和执行数据分析任务的不同页面
+1. 在 Synapse Studio 左侧，使用 &rsaquo;&rsaquo; 图标展开菜单，这将显示 Synapse Studio 中用于管理资源和执行数据分析任务的不同页面。
 
-## <a name="create-a-data-explorer-pool"></a>创建数据资源管理器池
+## 创建数据资源管理器池
 
 1. 在 Synapse Studio 中，选择“管理”页。
 1. 选择“数据资源管理器池”选项卡，然后使用“&#65291; 新建”图标，新建一个具有以下设置的新池： 
@@ -51,7 +53,7 @@ lab:
 1. 选择“下一步: 其他设置 >”并启用“流式引入”设置，这使数据资源管理器能够从流式处理源（如 Azure 事件中心）引入新数据。 
 1. 选择“查看并创建”以创建数据资源管理器池，然后等待它部署完成（可能需要 15 分钟或更长时间 - 状态将从“正在创建”更改为“联机”）。
 
-## <a name="create-a-database-and-ingest-data"></a>创建数据库并引入数据
+## 创建数据库并引入数据
 
 1. 在 Synapse Studio 中，选择“数据”页。
 1. 确保选中“工作区”选项卡，并在必要时选择页面左上角的 &#8635; 图标以刷新视图，以便列出数据资源管理器数据库  。
@@ -92,7 +94,7 @@ lab:
 
     >                 提示：在本示例中，从文件导入了非常少量的批处理数据，这适用于本练习的目的。 实际上，可以使用数据资源管理器分析更大的数据量；并且，由于启用了流式引入，因此还可以将数据资源管理器配置为将数据从流式处理源（如 Azure 事件中心）引入到数据中。
 
-## <a name="use-kusto-query-language-to-query-the-table-in-synapse-studio"></a>使用 Kusto 查询语言查询 Synapse Studio 中的表
+## 使用 Kusto 查询语言查询 Synapse Studio 中的表
 
 1. 关闭 Azure 数据资源管理器浏览器选项卡并返回到包含 Synapse Studio 的选项卡。
 1. 在“数据”页上，展开“iot-data”数据库及其“表”文件夹。 然后在“设备”表的“...”菜单中，选择“新建 KQL 脚本” > “使用 1000 行”。
@@ -137,7 +139,7 @@ lab:
 
 1. 关闭“KQL 查询”选项卡，放弃所做的更改。
 
-## <a name="delete-azure-resources"></a>删除 Azure 资源
+## 删除 Azure 资源
 
 你已完成对 Azure Synapse Analytics 的探索，现在应删除已创建的资源，以避免产生不必要的 Azure 成本。
 
