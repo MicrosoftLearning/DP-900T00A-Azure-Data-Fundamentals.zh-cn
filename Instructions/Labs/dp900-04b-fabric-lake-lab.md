@@ -21,7 +21,7 @@ lab:
 3. 新建一个工作区并为其指定名称，并在“高级”部分选择包含 Fabric 容量（试用版、高级版或 Fabric）的许可模式  。
 4. 打开新工作区时，它应为空。
 
-    ![Power BI 中空工作区的屏幕截图。](./Images/new-workspace.png)
+    ![Power BI 中空工作区的屏幕截图。](./images/new-workspace.png)
 
 ## 创建湖屋
 
@@ -37,7 +37,7 @@ lab:
 
     大约一分钟后，一个新的湖屋创建完成：
 
-    ![新湖屋的屏幕截图。](./Images/new-lakehouse.png)
+    ![新湖屋的屏幕截图。](./images/new-lakehouse.png)
 
 3. 查看新的湖屋，并注意使用左侧的湖屋资源管理器窗格可浏览湖屋中的表和文件：
     - Tables 文件夹包含可以使用 SQL 查询的表。 Microsoft Fabric 湖屋中的表基于 Apache Spark 中常用的开源 Delta Lake 文件格式。
@@ -52,7 +52,7 @@ lab:
 1. 在湖屋的主页上的“获取数据”菜单中选择“新建数据管道”，并创建名为“引入销售数据”的新数据管道   。
 1. 在“复制数据”向导的“选择数据源”页上选择“Wide World Importers 的零售数据模型”示例数据集  。
 
-    ![“选择数据源”页的屏幕截图。](./Images/choose-data-source.png)
+    ![“选择数据源”页的屏幕截图。](./images/choose-data-source.png)
 
 1. 选择“下一步”，并在“连接到数据源”页上查看数据源中的表 。
 1. 选择包含产品记录的 dimension_stock_item 表。 然后选择“下一步”以跳转至“选择数据目标”页 。
@@ -60,25 +60,25 @@ lab:
 1. 设置以下数据目标选项，然后选择“下一步”：
     - **根文件夹**：Tables
     - **加载设置**：加载到新表
-    - **目标表名称**：dimProduct
+    - **目标表名称**：dimension_stock_item
     - **列映射**：保持默认映射不变
     - **启用分区**：未选中
-1. 在“查看 _ 保存”页上，确保选中“立即开始数据传输”选项，然后选择“保存 + 运行”  。
+1. 在“查看 + 保存”页上，确保选中“立即开始数据传输”选项，然后选择“保存 + 运行”  。
 
     将创建一个包含“复制数据”活动的新管道，如下所示：
 
-    ![包含“复制数据”活动的管道的屏幕截图。](./Images/copy-data-pipeline.png)
+    ![包含“复制数据”活动的管道的屏幕截图。](./images/copy-data-pipeline.png)
 
     管道开始运行时，可以在管道设计器下的“输出”窗格中监视其状态。 使用 &#8635;（刷新）图标刷新状态，并等待它成功。
 
 1. 在左侧的中心菜单栏中，选择你的湖屋。
-1. 在主页上的“湖屋资源管理器”窗格中展开“Tables”并验证是否已创建 DimProduct 表   。
+1. 在主页上的“湖屋资源管理器”窗格中展开“Tables”并验证是否已创建 dimension_stock_item 表   。
 
     > **注意**：如果新表被列为无法识别的表，请使用湖屋工具栏中的“刷新”按钮刷新视图。
 
-1. 选择 dimProduct 表以查看其内容。
+1. 选择 dimension_stock_item 表以查看其内容。
 
-    ![DimProduct 表的屏幕截图。](./images/dimProduct.png)
+    ![dimension_stock_item 表的屏幕截图。](./images/dimProduct.png)
 
 ## 查询湖屋中的数据
 
@@ -92,7 +92,7 @@ lab:
 
     ```sql
     SELECT Brand, COUNT(StockItemKey) AS Products
-    FROM dimProduct
+    FROM dimension_stock_item
     GROUP BY Brand
     ```
 
@@ -110,9 +110,9 @@ Microsoft Fabric 湖屋将所有表整理至数据模型中，该数据模型可
 
 1. 在工具栏中，选择“新建报表”以打开包含 Power BI 报表设计器的新浏览器选项卡。
 1. 请在报表设计器中执行以下操作：
-    1. 在“数据”窗格中，展开 dimProduct 表，然后选择“Brand”和“StockItemKey”字段   。
-    1. 在“可视化效果”窗格中选择堆积条形图可视化效果（列表中的第一个效果） 。 然后确保 Y 轴包含 Brand 字段，并将 X 轴 中的聚合更改为 Count，使其包含 StockItemKey 的计数字段    。
-    
+    1. 在“数据”窗格中，展开 dimension_stock_item 表，然后选择“Brand”和“StockItemKey”字段   。
+    1. 在“可视化效果”窗格中选择堆积条形图可视化效果（列表中的第一个效果） 。 然后确保 Y 轴包含 Brand 字段，并将 X 轴 中的聚合更改为 Count，使其包含 StockItemKey 的计数字段    。 最后在报表画布中调整可视化效果的大小以填充可用空间。
+
         ![Power BI 报表的屏幕截图。](./images/fabric-report.png)
 
     > **提示**：可以使用 >> 图标隐藏报表设计器窗格，以便更清楚地查看报表。
