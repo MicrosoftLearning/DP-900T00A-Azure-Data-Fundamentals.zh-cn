@@ -4,17 +4,17 @@ lab:
   module: Explore fundamentals of real-time analytics
 ---
 
-# <a name="explore-azure-stream-analytics"></a>探索 Azure 流分析
+# 探索 Azure 流分析
 
 在本练习中，你将在 Azure 订阅中预配 Azure 流分析作业，并使用它来处理实时数据流。
 
 完成本实验室大约需要 15 分钟。
 
-## <a name="before-you-start"></a>开始之前
+## 开始之前
 
 需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
 
-## <a name="create-azure-resources"></a>创建 Azure 资源
+## 创建 Azure 资源
 
 1. 使用 Azure 订阅凭据在 [Azure 门户](https://portal.azure.com)中登录到 Azure 订阅。
 
@@ -40,6 +40,8 @@ lab:
     bash setup.sh
     ```
 
+    > 忽略有关未来更改和试验性功能的任何警告消息。
+
     等待脚本运行并执行以下操作：
 
     1. 安装创建资源所需的 Azure CLI 扩展（可忽略有关实验性扩展的任何警告）
@@ -48,7 +50,7 @@ lab:
     1. 创建 Azure 存储帐户，该帐户将用于存储已处理的数据。
     1. 创建 Azure 流分析作业，该作业将实时处理传入的设备数据，并将结果写入存储帐户。
 
-## <a name="explore-the-azure-resources"></a>探索 Azure 资源
+## 探索 Azure 资源
 
 1. 在 [Azure 门户](https://portal.azure.com?azure-portal=true)的主页上，选择“资源组”以查看订阅中的资源组。 这应包括安装脚本标识的 learn-xxxxxxxxxxxxxxxxx... 资源组**。
 2. 选择 learn-xxxxxxxxxxxxxxxxx... 资源组，并查看它所包含的资源，这些资源应包括**：
@@ -58,11 +60,11 @@ lab:
 
     如果这三种资源都未列出，请单击“&#8635; 刷新”按钮，直到它们出现为止。
 
- 3. 选择 streamxxxxxxxxxxxxx 流分析作业并在其“概述”页上查看信息，请注意以下详细信息**：
+3. 选择 streamxxxxxxxxxxxxx 流分析作业并在其“概述”页上查看信息，请注意以下详细信息**：
     - 该作业包含一个名为 iotinput 的输入和一个名为 bloboutput 的输出。 它们引用了 IoT 中心和安装脚本创建的存储帐户。
     - 该作业包含一个查询，该查询从 iotinput 输入读取数据，并通过计算每 10 秒处理的消息数来聚合该数据；将结果写入 bloboutput 输出。
 
-## <a name="use-the-resources-to-analyze-streaming-data"></a>使用资源分析流数据
+## 使用资源分析流数据
 
 1. 在流分析作业的“概述”页顶部，选择“&#9655; 开始”按钮，然后在“开始作业”窗格中，选择“开始”以开始作业。
 2. 等待流作业成功开始的通知。
