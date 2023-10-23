@@ -11,6 +11,6 @@
 | 02 - 了解 Azure 中的关系数据 | 探索 Azure SQL 数据库 | [dp900-01-sql-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-01-sql-lab.md) |
 | 03 - 了解 Azure 中的非关系数据 | 了解 Azure 存储 | [dp900-02-storage-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-02-storage-lab.md) |
 | 03 - 了解 Azure 中的非关系数据| 了解 Azure Cosmos DB  | [dp900-03-cosmos-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-03-cosmos-lab.md) |
-| 04 - 在 Azure 中探索数据分析 | 了解 Azure Synapse Analytics | [dp900-04-synapse-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-04-synapse-lab.md) |
-| 04 - 在 Azure 中探索数据分析 | 探索 Azure 流分析 | [dp900-05-stream-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-05-stream-lab.md) |
+| 04 - 在 Azure 中探索数据分析 | 探索 Microsoft Fabric | [dp900-04b-fabric-lake-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-04b-fabric-lake-lab.md) |
+| 04 - 在 Azure 中探索数据分析 | 探索 Microsoft Fabric 中的实时分析 | [dp900-05c-fabric-realtime-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-05c-fabric-realtime-lab.md) |
 | 04 - 在 Azure 中探索数据分析 | 使用 Power BI 可视化数据 | [dp900-pbi-06-lab.md](https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/blob/master/Instructions/Labs/dp900-pbi-06-lab.md) |
