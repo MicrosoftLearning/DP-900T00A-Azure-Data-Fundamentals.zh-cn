@@ -20,7 +20,7 @@ lab:
 
 1. 访问 [Azure 门户](https://portal.azure.com?azure-portal=true)并将其打开，然后使用与你的 Azure 订阅关联的凭据登录。
 
-    >                 注意：确保使用右上方用户 ID 下显示的包含你自己的订阅的目录。 如果没有，请选择用户图标并切换目录。
+    > 注意：确保使用右上方用户 ID 下显示的包含你自己的订阅的目录。 如果没有，请选择用户图标并切换目录。
 
 2. 在 Azure 门户的“主页”上，使用“+ 创建资源”图标创建一个新资源。
 3. 搜索“Azure Synapse Analytics”，并创建一个新的 Azure Synapse Analytics 资源，使其包含以下设置：
@@ -33,7 +33,7 @@ lab:
         - 帐户名：新建一个具有唯一名称的帐户，例如“datalake<your_name>”。
         - 文件系统名称：新建一个具有唯一名称的文件系统，例如“fs<your_name>”。
 
-    >                 注意：Synapse Analytics 工作区需要 Azure 订阅中的两个资源组；一个用于显式创建的资源，另一个用于服务使用的托管资源。 它还需要一个用于存储数据、脚本和其他项目的 Data Lake Storage 帐户。
+    > 注意：Synapse Analytics 工作区需要 Azure 订阅中的两个资源组；一个用于显式创建的资源，另一个用于服务使用的托管资源。 它还需要一个用于存储数据、脚本和其他项目的 Data Lake Storage 帐户。
 
 4. 输入这些详细信息后，选择“审阅并创建”，然后选择“创建”来创建工作区。
 5. 等待工作区的创建 - 此操作可能需要约 5 分钟。
@@ -67,7 +67,7 @@ lab:
 
 ## 删除 Azure 资源
 
->           注意：如果打算完成使用 Azure Synapse Analytics 的其他练习，可以跳过本部分。 否则，请按照以下步骤避免不必要的 Azure 花销。
+> 注意：如果打算完成使用 Azure Synapse Analytics 的其他练习，可以跳过本部分。 否则，请按照以下步骤避免不必要的 Azure 花销。
 
 1. 关闭 Synapse Studio 浏览器选项卡，而不保存任何更改，然后返回 Azure 门户。
 1. 在 Azure 门户的“主页”上，选择“资源组”。
