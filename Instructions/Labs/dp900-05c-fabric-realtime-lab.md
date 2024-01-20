@@ -35,9 +35,20 @@ lab:
 
 2. 在实时分析主页中，使用自己需要的名称创建新的 KQL 数据库。
 
-    大约一分钟后，一个新的 KQL 数据库创建完成：
+    ![RTA 编辑器的屏幕截图，其中突出显示了“创建 KQL DB”。](./images/create-kql-db.png)
+
+   你将看到仪表板屏幕，然后选择顶部的“KQL 数据库”按钮。
 
     ![新 KQL 数据库的屏幕截图。](./images/kql-database.png)
+
+    选择后，可看到“新建 KQL 数据库”对话框，可在其中为 KQL 数据库命名******。
+
+    ![新 KQL 数据库名称对话框的屏幕截图。](./images/name-kql-db.png)
+
+   - 数据库名称，在本方案中为：`my_kql_db`
+   - 单击“创建”******
+  
+    大约一分钟后，一个新的 KQL 数据库创建完成：
 
     目前数据库中没有表。
 
@@ -91,7 +102,7 @@ lab:
     ```kql
     // This query returns the number of taxi pickups per hour
     ['taxi-data']
-    | summarize PickupCount = count() by bin(tpep_pickup_datetime, 1h)
+    | summarize PickupCount = count() by bin(todatetime(tpep_pickup_datetime), 1h)
     ```
 
 1. 使用 &#9655;（“运行”）按钮运行查询并查看结果，结果应显示每小时的出租车接送数。
