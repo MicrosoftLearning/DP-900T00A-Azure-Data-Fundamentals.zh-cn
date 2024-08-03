@@ -19,7 +19,7 @@ lab:
 在 Fabric 中处理数据之前，创建一个已启用的 Fabric 试用版的工作区。
 
 1. 在 `https://app.fabric.microsoft.com` 登录到 [Microsoft Fabric](https://app.fabric.microsoft.com)。
-1. 在菜单栏左下角，切换到“数据工程”**** 体验。
+1. 在菜单栏左下角，切换到**数据工程**体验。
 
     ![体验切换器菜单的屏幕截图。](./images/fabric-switcher.png)
 
@@ -114,7 +114,7 @@ Microsoft Fabric 湖屋将所有表整理至语义数据模型中，该数据模
 
 1. 在“文件”**** 菜单上选择“保存”****，将报表另存为 Fabric 工作区中的 Taxi Rides Report****。
 
-    现在可以关闭包含该报表的浏览器选项卡，返回到湖屋。 可以在 Microsoft Fabric 门户的工作区页面中找到报表。
+    可以在 Microsoft Fabric 门户的工作区页面中找到报表。
 
 ## 清理资源
 
