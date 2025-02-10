@@ -1,3 +1,11 @@
+#README
+
+We've turned off the ability to report issues directly on this repo and do not monitor PRs.
+
+Provide feedback here: https://aka.ms/provide-feedback
+
+Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
+
 # Microsoft Azure 数据基础知识
 
 此存储库包含 Microsoft 课程 [DP-900 *Microsoft Azure 数据基础知识*](https://docs.microsoft.com/en-us/learn/certifications/courses/dp-900t00) 和 [Microsoft Learn 上的自学模块](https://docs.microsoft.com/en-us/users/23110622/collections/0kjyh8rn5gdrjj/)的动手实验练习。 这些实验室配合教材提供，你可以使用其描述的方法进行练习。 
