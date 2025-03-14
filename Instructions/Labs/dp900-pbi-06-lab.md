@@ -10,11 +10,7 @@ lab:
 
 完成本实验室大约需要 20 分钟。
 
-## 开始之前
-
-需要一个你在其中具有管理级权限的 [Azure 订阅](https://azure.microsoft.com/free)。
-
-### 安装 Power BI Desktop
+## 安装 Power BI Desktop
 
 如果你的 Windows 计算机上尚未安装 Microsoft Power BI Desktop，则可以免费下载和安装。
 
@@ -86,7 +82,7 @@ lab:
 
     ![显示如何在 Power BI 中重命名层次结构的屏幕截图。](images/rename-hierarchy.png)
 
-1. 在左侧边缘，选择“数据视图”选项卡，然后在“数据”窗格中，选择 customers 表  。
+1. 在左侧边缘，选择“**表视图**”选项卡，然后在“**数据**”窗格中，选择 **customers** 表。
 1. 选择“City”列标题，然后将其“数据类别”属性设置为“City”：
 
     ![显示如何在 Power BI 中设置数据类别的屏幕截图。](images/data-category.png)
