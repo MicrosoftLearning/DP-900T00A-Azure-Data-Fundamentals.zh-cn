@@ -18,7 +18,7 @@ lab:
 
 在本练习中，你将预配 Azure Database for MySQL 资源。
 
-1. 在 Azure 门户的左上角选择“&#65291; 创建资源”，然后搜索“Azure Database for MySQL”。 然后，在出现的“Azure Database for MySQL”页上选择“创建”。
+1. 在 Azure 门户的左上角选择“**&#65291; 创建资源**”，然后搜索 `Azure Database for MySQL`。 然后，在出现的“Azure Database for MySQL”页上选择“创建”。
 
 1. 查看可用的 Azure Database for MySQL 选项。 然后选择“资源类型”，选择“灵活服务器”，并选择“创建”  。
 

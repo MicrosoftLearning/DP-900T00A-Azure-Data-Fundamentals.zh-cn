@@ -23,7 +23,7 @@ lab:
     > 提示：确保使用右上方用户 ID 下显示的包含订阅的目录。 如果没有，请选择用户图标并切换目录。
 
 2. 在 Azure 门户的“主页”上，使用“+ 创建资源”图标创建一个新资源。
-3. 搜索“Azure Synapse Analytics”，并创建一个新的 Azure Synapse Analytics 资源，使其包含以下设置：
+3. 搜索 `Azure Synapse Analytics`，并创建一个新的 **Azure Synapse Analytics** 资源，使其包含以下设置：
     - **订阅**：Azure 订阅
         - 资源组：创建一个具有合适名称的新资源组，如名为“synapse-rg”
         - 受管理资源组：输入适当的名称，例如“synapse-managed-rg”。
@@ -62,8 +62,8 @@ lab:
 3. 在“源”步骤的“数据集”子步骤中，选择以下设置：
     - 源类型：全部
     - 连接：创建新的连接，然后在显示的“新建连接”窗格中，在“通用协议”选项卡上，选择“HTTP”。然后，使用以下设置继续并创建与数据文件的连接：*  *
-        - 名称：AdventureWorks 产品
-        - 说明：通过 HTTP 提供的产品列表
+        - **名称**：`AdventureWorks Products`
+        - **说明**：`Product list via HTTP`
         - 通过集成运行时连接：AutoResolveIntegrationRuntime
         - 基 URL：`https://raw.githubusercontent.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/master/Azure-Synapse/products.csv`
         - 服务器证书验证：启用
@@ -120,15 +120,15 @@ lab:
 2. 在打开的“SQL 脚本 1”窗格中，查看已生成的 SQL 代码，应如下所示：
 
     ```SQL
-    -- This is auto-generated code
-    SELECT
-        TOP 100 *
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
-            FORMAT = 'CSV',
-            PARSER_VERSION='2.0'
-        ) AS [result]
+   -- This is auto-generated code
+   SELECT
+       TOP 100 *
+   FROM
+       OPENROWSET(
+           BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
+           FORMAT = 'CSV',
+           PARSER_VERSION='2.0'
+       ) AS [result]
     ```
 
     此代码将从你导入的文本文件中打开一个行集，并检索前 100 行数据。
@@ -146,15 +146,15 @@ lab:
 5. 请注意，结果由名为 C1、C2、C3 和 C4 的四列组成；结果中的第一行包含数据字段的名称。 若要解决此问题，请向 OPENROWSET 函数添加一个 HEADER_ROW = TRUE 参数，如此处所示（将 datalakexx 和 fsxx 替换为你的数据湖存储帐户和文件系统的名称），然后重新运行查询：
 
     ```SQL
-    SELECT
-        TOP 100 *
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
-            FORMAT = 'CSV',
-            PARSER_VERSION='2.0',
-            HEADER_ROW = TRUE
-        ) AS [result]
+   SELECT
+       TOP 100 *
+   FROM
+       OPENROWSET(
+           BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
+           FORMAT = 'CSV',
+           PARSER_VERSION='2.0',
+           HEADER_ROW = TRUE
+       ) AS [result]
     ```
 
     现在，结果如下所示：
@@ -168,16 +168,16 @@ lab:
 6. 按如下所示修改查询（将 datalakexx 和 fsxx 替换为 Data Lake Storage 帐户和文件系统的名称）：
 
     ```SQL
-    SELECT
-        Category, COUNT(*) AS ProductCount
-    FROM
-        OPENROWSET(
-            BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
-            FORMAT = 'CSV',
-            PARSER_VERSION='2.0',
-            HEADER_ROW = TRUE
-        ) AS [result]
-    GROUP BY Category;
+   SELECT
+       Category, COUNT(*) AS ProductCount
+   FROM
+       OPENROWSET(
+           BULK 'https://datalakexx.dfs.core.windows.net/fsxx/products.csv',
+           FORMAT = 'CSV',
+           PARSER_VERSION='2.0',
+           HEADER_ROW = TRUE
+       ) AS [result]
+   GROUP BY Category;
     ```
 
 7. 运行修改后的查询，它应该返回一个包含每个类别中产品数量的结果集，如下所示：
@@ -188,7 +188,7 @@ lab:
     | 自行车车架 | 1 |
     | ... | ... |
 
-8. 在“SQL 脚本 1”的“属性”窗格中，将“名称”更改为“产品计数(按类别)”。 然后在工具栏中，选择“发布”以保存脚本。
+8. 在“**SQL 脚本 1**”的“**属性**”窗格中，将“**名称**”更改为 `Count Products by Category`。 然后在工具栏中，选择“发布”以保存脚本。
 
 9. 关闭“产品计数(按类别)”脚本窗格。
 
@@ -227,15 +227,15 @@ lab:
 6. 查看笔记本中的第一个（也是唯一一个）单元格中的代码，它应该如下所示：
 
     ```Python
-    %%pyspark
-    df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
-    ## If header exists uncomment line below
-    ##, header=True
-    )
-    display(df.limit(10))
+   %%pyspark
+   df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
+   ## If header exists uncomment line below
+   ##, header=True
+   )
+   display(df.limit(10))
     ```
 
-7.  选择代码单元左侧的“&#9655; 运行”来运行它，并等待结果。 当你第一次在笔记本中运行单元格时，Spark 池会启动，因此可能需要一分钟左右的时间来返回任何结果。
+7. 选择代码单元左侧的“&#9655; 运行”来运行它，并等待结果。 当你第一次在笔记本中运行单元格时，Spark 池会启动，因此可能需要一分钟左右的时间来返回任何结果。
 
     > 注意：如果由于 Python 内核尚不可用而发生错误，请再次运行该单元。
 
@@ -251,12 +251,12 @@ lab:
 9. 取消注释“,header=True”这一行（因为 products.csv 文件的第一行包含列标题），因此代码如下所示：
 
     ```Python
-    %%pyspark
-    df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
-    ## If header exists uncomment line below
-    , header=True
-    )
-    display(df.limit(10))
+   %%pyspark
+   df = spark.read.load('abfss://fsxx@datalakexx.dfs.core.windows.net/products.csv', format='csv'
+   ## If header exists uncomment line below
+   , header=True
+   )
+   display(df.limit(10))
     ```
 
 10. 重新运行单元格，并验证结果是否如下所示：

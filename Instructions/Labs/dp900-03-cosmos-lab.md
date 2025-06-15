@@ -17,9 +17,10 @@ lab:
 
 若要使用 Cosmos DB，必须在 Azure 订阅中预配 Cosmos DB 帐户。 在此练习中，你将预配一个 Cosmos DB 帐户，该帐户使用 Azure Cosmos DB for NoSQL。
 
-1. 在 Azure 门户中，选择左上角的“+ 创建资源”，然后搜索“Azure Cosmos DB”。  在结果中，选择 Azure Cosmos DB，然后选择“创建” 。
+1. 在 Azure 门户中，选择左上角的“**+ 创建资源**”，然后搜索 `Azure Cosmos DB`。  在结果中，选择 Azure Cosmos DB，然后选择“创建” 。
 1. 在“Azure Cosmos DB for NoSQL”磁贴中，选择“创建”。
 1. 输入以下详细信息，然后选择“查看 + 创建”：
+    - **工作负荷类型**：学习
     - **订阅**：如果正在使用沙盒，请选择“助手订阅”。 否则，请选择 Azure 订阅。
     - 资源组：如果使用沙盒，请选择现有资源组（其名称类似于 learn-xxxx...）。否则，请使用所选的名称创建一个新资源组。
     - **帐户名**：输入唯一的名称
@@ -47,14 +48,14 @@ lab:
 1. 按如下所示修改新项的 JSON 形式，然后选择“保存”。
 
     ```json
-    {
-        "name": "Road Helmet,45",
-        "id": "123456789",
-        "categoryID": "123456789",
-        "SKU": "AB-1234-56",
-        "description": "The product called \"Road Helmet,45\" ",
-        "price": 48.74
-    }
+   {
+       "name": "Road Helmet,45",
+       "id": "123456789",
+       "categoryID": "123456789",
+       "SKU": "AB-1234-56",
+       "description": "The product called \"Road Helmet,45\" ",
+       "price": 48.74
+   }
     ```
 
 1. 保存新项后，请注意，将自动添加其他元数据属性。
@@ -67,9 +68,9 @@ lab:
 1. 按照以下方式更改查询：
 
     ```sql
-    SELECT *
-    FROM c
-    WHERE CONTAINS(c.name,"Helmet")
+   SELECT *
+   FROM c
+   WHERE CONTAINS(c.name,"Helmet")
     ```
 
 1. 使用“执行查询”按钮运行修订后的查询并查看结果，其中包括具有包含文本“Helmet”的“名称”字段的任何项的 JSON 实体 。
