@@ -18,7 +18,7 @@ lab:
 
 在本练习中，你将预配 Azure Database for PostgreSQL 资源。
 
-1. 在 Azure 门户的左上角选择“&#65291; 创建资源”，然后搜索“Azure Database for PostgreSQL”。 然后，在出现的“Azure Database for PostgreSQL”页上选择“创建”。
+1. 在 Azure 门户的左上角选择“**&#65291; 创建资源**”，然后搜索 `Azure Database for PostgreSQL`。 然后，在出现的“Azure Database for PostgreSQL”页上选择“创建”。
 
 1. 查看可用的“Azure Database for PostgreSQL”选项，然后在“Azure Database for PostgreSQL”磁贴中，选择“灵活服务器(建议)”，然后选择“创建”。
 

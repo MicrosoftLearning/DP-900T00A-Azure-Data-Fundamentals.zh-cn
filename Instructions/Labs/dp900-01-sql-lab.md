@@ -16,7 +16,7 @@ lab:
 
 ## 预配 Azure SQL 数据库资源
 
-1. 在 [Azure 门户](https://portal.azure.com?azure-portal=true)的左上角选择“&#65291; 创建资源”，然后搜索“Azure SQL”。 然后在出现的“Azure SQL”页面中，选择“创建”。
+1. 在 [Azure 门户](https://portal.azure.com?azure-portal=true)的左上角选择“**&#65291; 创建资源**”，然后搜索 `Azure SQL`。 然后在出现的“Azure SQL”页面中，选择“创建”。
 
 1. 查看可用的 Azure SQL 选项，然后在“SQL 数据库”磁贴中，确保选中“单一数据库”并选择“创建”。
 
@@ -24,8 +24,8 @@ lab:
 
 1. 在“创建 SQL 数据库”页上输入以下值，并将所有其他属性保留为默认设置：
     - **订阅**：选择 Azure 订阅。
-    - **资源组**：使用你所选择的名称创建新资源组。
-    - 数据库名称：AdventureWorks
+    - 资源组：使用所选名称创建新资源组。
+    - 数据库名称：`AdventureWorks`
     - **服务器**：选择“新建”，并在任何可用位置创建具有唯一名称的新服务器。 使用“SQL 身份验证”，并指定你的姓名作为服务器管理员登录名和一个适当复杂的密码（请记住密码 - 稍后你将需要它！）
     - 想要使用 SQL 弹性池吗？：否
     - 工作负载环境：开发
@@ -46,7 +46,7 @@ lab:
 
 1. 在页面左侧的窗格中，选择“查询编辑器(预览版)”，然后使用为服务器指定的管理员登录名和密码登录。
     
-    如果显示一条表示“不允许使用客户端 IP 地址”的错误消息，请选择消息末尾的“允许列表 IP …”链接以允许访问并尝试再次登录（虽然之前已将自己计算机的客户端 IP 地址添加到防火墙规则中，但查询编辑器可能会从不同的地址进行连接，具体取决于网络配置。）
+    >**备注**：如果显示一条表示“不允许使用客户端 IP 地址”的错误消息，请选择消息末尾的“**允许列表 IP …**”链接以允许访问并尝试再次登录（虽然之前已将自己计算机的客户端 IP 地址添加到防火墙规则中，但查询编辑器可能会从不同的地址进行连接，具体取决于网络配置。）
     
     查询编辑器如下所示：
     
@@ -57,7 +57,7 @@ lab:
 1. 在“查询 1”窗格中，输入以下 SQL 代码：
 
     ```sql
-    SELECT * FROM SalesLT.Product;
+   SELECT * FROM SalesLT.Product;
     ```
 
 1. 选择查询上方的“&#9655;运行”以运行该代码，并查看结果，其中应包括 SalesLT.Product 表中的所有行和列，如下所示 ：
@@ -67,18 +67,18 @@ lab:
 1. 将 SELECT 语句替换为以下代码，然后选择“&#9655; 运行”以运行新查询并查看结果（其中仅包括 ProductID、Name、ListPrice、ProductCategoryID 列）    ：
 
     ```sql
-    SELECT ProductID, Name, ListPrice, ProductCategoryID
-    FROM SalesLT.Product;
+   SELECT ProductID, Name, ListPrice, ProductCategoryID
+   FROM SalesLT.Product;
     ```
 
 1. 现在尝试以下查询，该查询使用 JOIN 从 SalesLT.ProductCategory 表中获取类别名称：
 
     ```sql
-    SELECT p.ProductID, p.Name AS ProductName,
-            c.Name AS Category, p.ListPrice
-    FROM SalesLT.Product AS p
-    JOIN [SalesLT].[ProductCategory] AS c
-        ON p.ProductCategoryID = c.ProductCategoryID;
+   SELECT p.ProductID, p.Name AS ProductName,
+           c.Name AS Category, p.ListPrice
+   FROM SalesLT.Product AS p
+   JOIN [SalesLT].[ProductCategory] AS c
+       ON p.ProductCategoryID = c.ProductCategoryID;
     ```
 
 1. 关闭查询编辑器窗格，并放弃所做的编辑。
